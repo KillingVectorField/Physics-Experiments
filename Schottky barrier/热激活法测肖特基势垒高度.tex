@@ -1,0 +1,266 @@
+﻿\RequirePackage{fixltx2e} %This package in CTeX is not compatible with revtex4-1
+\documentclass[aps,pre,12pt,preprint,onecolumn,showpacs,showkeys]{revtex4-1}
+\usepackage{ctex}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{setspace,dcolumn}
+\usepackage{hyperref}
+\usepackage{graphicx,psfrag,epsfig}
+\usepackage[font=small,format=plain,labelfont=bf,textfont=it,justification=centering,singlelinecheck=false]{caption}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,bm,upgreek}
+\usepackage{geometry}
+\usepackage[mathscr]{eucal}
+\usepackage{caption}
+\usepackage{subcaption}
+\hypersetup{colorlinks=true}
+\geometry{top=2.54cm,bottom=2.54cm,left=3cm,right=3cm}
+\renewcommand\appendixname{附录}
+\renewcommand\abstractname{}%摘要
+\renewcommand\tablename{表}
+\renewcommand\figurename{图}
+\makeatletter
+\def\@pacs@name{\songti\zihao{-4}{\bf PACS码：}}
+\def\@keys@name{\songti\zihao{-4}{\bf 关键词：}}
+\def\Dated@name{日期：}
+\def\Received@name{\zihao{-5}{接收} }
+\def\Revised@name{\zihao{-5}{修订} }
+\def\Accepted@name{\zihao{-5}{采纳} }
+\def\Published@name{\zihao{-5}{发表} }
+\makeatother
+\linespread{1.3}
+\renewcommand{\labelenumi}{\alph{enumi}.}
+\leftmargini=20mm
+\def \d {\mathrm d}
+\def \cs {\frac{\d \sigma}{\d \Omega}(\theta)}
+\def \csref {\frac{\d \sigma}{\d \Omega}(\theta_0)}
+\def \Cs {^{137}\mathrm{Cs}}
+\def \Co{^{60}\mathrm{Co}}
+\def \degree {^\circ}
+\def \V {\mathrm{V}}
+
+\begin{document}
+\title{\bf\heiti\zihao{3}热激活法测肖特基势垒高度\vspace{15mm}}
+\author{\fangsong\zihao{4}邵智轩\vspace{2mm}}
+\affiliation{\songti\zihao{-4}学号：1400012141\vspace{2mm}}
+\date{\today}
+%\pacs{02.10.Yn, 33.15.Vb, 98.52.Cf, 78.47.dc}
+\keywords{肖特基势垒，能带，欧姆接触，肖特基接触，功函数，内建场，激活能法}
+\email{shaozhixuansh@pku.edu.cn; (86)13381350619}
+
+\begin{abstract}
+\vspace{10mm}
+\begin{spacing}{1.5}
+\songti\zihao{-4}
+    肖特基势垒（Shottky Barrier）是指具有整流特性的金属-半导体界面，就如同二极管具有整流特性。肖特基势垒高度是金属与半导体接触的一个重要的物理量，准确地测量肖特基势垒高度在界面物理研究及相关器件的研制中有着重要的意义。本实验学习了金属—半导体接触的相关基础理论知识；了解和掌握了肖特基势垒的测量方法；正确地测定了肖特基势垒高度和理查逊常数等物理量。
+\end{spacing}
+\end{abstract}
+\maketitle
+\songti\zihao{-4}
+
+\section{引言}
+    金属—半导体接触时固体物理学中的重要研究领域。关于金属-半导体接触处的肖特基势垒，有两种极端情形下的理论模型。一是在接触处表面态密度为零条件下的肖特基模型，一是在表面态密度无穷条件下的巴丁模型。尽管由于金属-半导体界面的复杂性，有许多理论问题尚未解决，但是金属-半导体接触在肖特基势垒栅场效应晶体管、太阳能电池、各种探测器和传感器、微波器件和大规模集成电路中得到广泛应用，肖特基势垒器件推动了界面物理和材料物理的深入研究，并在大功率、耐高温、高速、低噪声器件的应用中取得了重大进展。
+
+\section{原理}
+    \subsection{基本概念}
+        \begin{enumerate}
+            \item 金属的功函数：定义为将金属中处于费米能级上的电子移到真空能级所需要的能量。
+            \item 半导体的功函数：定义为费米能级与真空能级之间的能量差。由于半导体的费米能级一般处于禁带之中，能级上并无电子，所以这个功函数被认为是将电子从价带和从导带移到真空能级所需能量的统计平均。
+            \item 半导体的电子亲合能：定义为导带底与真空能级的能量差，用$q\chi$表示。
+        \end{enumerate}
+    \subsection{分离的金属和半导体能带图}
+        \begin{figure}[h]
+            \begin{minipage}[t]{0.45\textwidth}
+                \centering
+                \includegraphics[width=60mm]{1}
+                \caption{\label{fig:mode1}%
+                分离的金属和半导体能带图}
+            \end{minipage}
+            \begin{minipage}[t]{0.45\textwidth}
+                \centering
+                \includegraphics[width=60mm]{2}
+                \caption{\label{fig:mode2}%
+                金属与n型半导体接触的能带图}
+            \end{minipage}
+        \end{figure}
+        如图 \ref{fig:mode1}所示，当一块金属和一块半导体彼此分开时，他们保持电中性，其中$E_0$为真空能级；$q \phi _M$ 和 $q\phi _S$ 分别是金属和半导体的功函数；$E_{FM}$和$E_{FS}$分别是金属和半导体的费米能级；$q\chi$是半导体的电子亲合能；$E_c$和$E_v$分别是半导体导带底和价带顶的能量。
+    \subsection{肖特基势垒的形成}
+        
+        假设半导体是n型，且$\phi_M>\phi_S$。任何两种相接触的固体的费米能级（Fermi level，或者严格意义上，化学势）必须相等。当两种材料相接触时，电子将会从低功函（高Fermi level）一边流向另一边直到费米能级相平衡。从而，低功函（高Fermi level）的材料将带有少量正电荷而高功函（低Fermi level）材料则会变得具有少量电负性。由于半导体中的施主浓度比金属中的电子浓度低几个数量级，所以金属中负电荷只存在于金属表面，而半导体中的正电荷分布所在的耗尽层则比原子间距宽，形成了阻止半导体中电子流向金属的静电场，称为\textbf{内建场}，这一电势差称为\textbf{内建势}。内建势导致半导体表面$x$处的能带向上弯曲（斜率为内建场大小），形成了阻止半导体中电子向金属跃渡的势垒，如图\ref{fig:mode2}所示。这种接触电势将会在任何两种固体间出现并且是诸如二极管整流现象和温差电效应等的潜在原因。明显的能带弯曲在金属中不会出现因为他们很短的屏蔽长度意味着任何电场只在接触面间无限小距离内存在。
+
+    \subsection{测量原理}
+        本实验采用$I$—$V$—$T$法，它是正向电流电压法（$I$—$V$法）与激活能法的结合。它可以确定肖特基二极管的品质因子$n$，串联电阻$R$，理查逊常数$A^{**}$和肖特基势垒高度$q\phi_b$。
+
+        如果肖特基势垒是在高迁移率半导体（如 Si、GaAs）上形成，按照热电子发射理论，穿过势垒的电流$I$与外加电压$V$满足：
+        \begin{equation}\label{eq:1}
+            I=I_0 {\exp[q(V-IR)/nkT]-1}    
+        \end{equation}
+        其中$I_0$为反向饱和电流，可表示为：
+        \begin{equation}\label{eq:2}
+            I_0 = A_e A^{**} T^2 \exp(-q \phi_b /k T)
+        \end{equation}
+        其中$A_e$为金属与半导体接触的有效面积，实验中取值为$A_e=2.83\times 10^{-3} \mathrm{cm}^2$。
+
+        肖特基二极管的品质因子$n$，是反映其势垒偏离理想情况的一个因子。对于理想情况，$n=1$；对于一般情况$n \ne 1$。当$q(V-IR)\geqslant 3kT$时，式 \ref{eq:1} 简化为：
+        \begin{equation}\label{eq:3}
+            I=I_0 \exp[q(V-IR)/nkT]
+        \end{equation}
+        对上式取对数，然后电压对电流取微商，整理得：
+        \begin{equation}
+            \frac{\d V}{\d I}=\frac{nkT}{q}\cdot \frac{1}{I} + R
+        \end{equation}
+        可见在某一固定温度下（例如$300\mathrm{K}$测量$I$—$V$，拟合$\frac{\d V}{\d I}$—$\frac{1}{I}$直线，由其斜率可以得到品质因子$n$，其截距可得串联电阻$R$。
+
+        如果不考虑$n$，$R$随温度的变化，且取$n\approx 1$，以及$V \gg IR$（$R$较小的情况），式 \ref{eq:3} 简化为：
+        \begin{equation}\label{eq:4}
+            I=I_0 \exp\left(\frac{qV}{kT}\right)
+        \end{equation}
+        由式 \ref{eq:2} 和 \ref{eq:4}可得到：
+        \begin{equation}
+            I=A_e A^{**} \exp(-q \phi_b/kT)\exp\left(\frac{qV}{kT}\right)
+        \end{equation}
+        整理后取对数：
+        \begin{equation}\label{eq:7}
+            \ln \frac{I}{T^2}=\ln (A_e A^{**})-\frac{q(\phi_b-V)}{1000 k} \cdot \frac{1000}{T}
+        \end{equation}
+        其中，$1000 k=0.862 \mathrm{eV/K}$。当偏压$V$固定，在 不同温度条件下测量电流$I$与温度$T$的关系，拟合$\ln \frac{I}{T^2}$—$\frac{1000}{T}$直线，由其斜率可得势垒高度$q\phi_b$，由其截距可得有效理查逊常数$A^{**}$。
+    
+\section{实验装置及样品}
+    本实验采用的测量线路如图\ref{fig:equip}所示。
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=140mm]{equipment}
+        \caption{\label{fig:equip}%
+                测量线路图以及样品结构示意图}
+    \end{figure}
+    
+    本实验测量的样品是Pt/n — Si 肖特基势垒二极管。在样品的背面做欧姆接触电极，如图 \ref{fig:equip} 所示，其阻值相对于绝缘层可忽略。
+
+\section{实验结果}
+    在$T=299K$时测量正向偏压（0-5V）和反向偏压（0-10V）下的伏安曲线如图 \ref{fig:V-I}所示，样品性能良好。
+    \begin{figure}[ht]
+        \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            \includegraphics[width=80mm]{V-I}
+            \caption{\label{fig:V-I}%
+            双向偏压下的伏安特性曲线，此时的温度（平均值）为$T=298.9964\mathrm K$}
+        \end{minipage}
+        \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            \includegraphics[width=80mm]{V-I2}
+            \caption{\label{fig:V-I2}%
+            正向偏压下的伏安特性曲线，此时的温度（平均值）为$T=300.4290\mathrm K$}
+        \end{minipage}
+        
+    \end{figure}
+
+    在$T=300\mathrm K$，正向偏压下，作大范围$I$—$V$数据扫描（100 - 400 mV，步长为 20 mV），伏安特性曲线如图\ref{fig:V-I2}所示，数据如表\ref{tab:V-I2}所示。
+
+    \begin{table}[ht]
+        \caption{\label{tab:V-I2}%
+        固定$T=300\mathrm K$，正向偏压下的测量数据}
+        \begin{tabular}{|c|c|c|c|c|c|c|}\hline
+            序号&$I/\mu \mathrm A$&$V/\mathrm{mV}$&$T/\mathrm K$&$\frac{\d V}{\d I}$\footnote{由于用的是五点法数值微分，所以前两个和后两个值无意义}&$1/I$\footnote{后两列的单位电压为 V，电流为 A}\\\hline
+            0  &     0.673412 &   99.947113 &  300.295027 &            &  1.484975e+06 \\\hline1  &     1.181504 &  119.951965 &  300.355624 &            &  8.463788e+05 \\\hline2  &     2.121275 &  140.040772 &  300.223511 &   16112.32188 &  4.714146e+05 \\\hline3  &     3.830099 &  159.813522 &  300.504343 &    8687.95387 &  2.610899e+05 \\\hline4  &     7.135985 &  180.176895 &  300.287202 &    4640.57983 &  1.401348e+05 \\\hline5  &    13.172831 &  200.095627 &  300.296720 &    2385.44871 &  7.591383e+04 \\\hline6  &    25.355606 &  220.000946 &  300.390421 &    1202.83901 &  3.943901e+04 \\\hline7  &    49.453354 &  240.014984 &  300.390010 &     597.68485 &  2.022108e+04 \\\hline8  &    97.712173 &  259.981354 &  300.381924 &     306.72095 &  1.023414e+04 \\\hline9  &   191.151169 &  280.047089 &  300.329613 &     153.47696 &  5.231462e+03 \\\hline10 &   373.896149 &  299.876648 &  300.539272 &      78.63379 &  2.674539e+03 \\\hline11 &   708.498840 &  319.892761 &  300.371849 &      51.06223 &  1.411435e+03 \\\hline12 &  1181.911377 &  339.414246 &  300.630788 &      30.31979 &  8.460871e+02 \\\hline13 &  2067.580566 &  359.424255 &  300.597266 &      18.44295 &  4.836571e+02 \\\hline14 &  3326.966309 &  378.954193 &  300.713401 &   &  3.005741e+02 \\\hline15 &  5161.684570 &  400.396027 &  300.557747 &  &  1.937352e+02 \\\hline
+        \end{tabular}
+    \end{table}
+
+    固定偏压为$V=158.90 \mathrm{mV}$，测量电流与$I$与温度$T$的关系，数据如表\ref{tab:I-T}所示。
+    \begin{table}[ht]
+        \caption{\label{tab:I-T}%
+        固定$V=159 \mathrm{mV}$，测量电流$I$与温度$T$的关系\footnote{每一个数据为手动采集20次的平均值}}
+        \begin{tabular}{|c|c|c|c|c|c|}\hline
+            序号&$I/\mu \mathrm A$&$V/\mathrm{mV}$&$T/\mathrm K$&$\ln\frac{I}{T^2}$&$\frac{1000}{T}$\\\hline
+            0 &  1.605844 &  159.259140 &  288.910187 &  -24.673741 &  3.461892 \\\hline1 &  2.383922 &  159.179459 &  294.338226 &  -24.316776 &  3.396512 \\\hline2 &  3.404770 &  159.347092 &  298.841003 &  -23.989248 &  3.347782 \\\hline3 &  4.696401 &  158.240418 &  303.554169 &  -23.700437 &  3.293312 \\\hline4 &  6.884585 &  158.754349 &  308.692383 &  -23.350601 &  3.239981 \\\hline5 &  9.862225 &  158.619171 &  313.524658 &  -23.023286 &  3.188376 \\\hline
+        \end{tabular}
+    \end{table}
+
+    下面用两种方法求肖特基二极管的品质因子$n$，串联电阻$R$，理查逊常数$A^{**}$和肖特基势垒高度$q\phi_b$。
+    \subsection{线性拟合}
+        \begin{figure}[ht]
+            \begin{minipage}[t]{0.48\textwidth}
+                \centering
+                \includegraphics[width=80mm]{lmfit1}
+                \caption{\label{fig:lmfit1}%
+                300 K 下$\frac{\d V}{\d I}$—$\frac{1}{I}$直线}
+            \end{minipage}
+            \begin{minipage}[t]{0.48\textwidth}
+                \centering
+                \includegraphics[width=80mm]{lmfit2}
+                \caption{\label{fig:lmfit2}%
+                158.90 V 正向偏压 下$\ln \frac{I}{T^2}$—$\frac{1000}{T}$直线}
+            \end{minipage}
+        \end{figure}
+        由式 \ref{eq:4}，利用表\ref{tab:V-I2}中的数据，拟合$\frac{\d V}{\d I}$的直线如图\ref{fig:lmfit1} 所示。
+        相关系数$R^2=0.99969$，（以下均为国际单位制）斜率与截距：
+        \begin{equation}\label{eq:R}
+            \frac{nkT}{q}=(0.0341\pm 0.0002) \mathrm V,\quad R=(-65\pm31) \Omega
+        \end{equation}
+        （由此反过来验证我们取的数据点都满足$q(V-IR)\geqslant 3kT$的近似条件）。我们可以反解出品质因子$n$：
+        \begin{equation}\label{eq:n}
+            n=0.0341 \frac{q}{kT}=1.317\pm 0.008
+        \end{equation}
+        
+        在$n\approx 1$和$V\gg IR$的近似条件下，固定偏压$V=158.90\mathrm {mV}$，利用式\ref{eq:7}，将表\ref{tab:I-T}中的数据拟合直线如图\ref{fig:lmfit2}所示。相关系数$R^2=0.9990$，求得的截距：
+        \begin{equation}\label{eq:A}
+            \ln (A_e A**)=-3.77\pm 0.32 \Rightarrow A^{**}=(8\pm 3) \mathrm{A/cm^2 K^2}
+        \end{equation}
+        与斜率：
+        \begin{equation}\label{eq:phi}
+            -\frac{q(\phi_b -V)}{1000 k}=(-6.0\pm 0.1)\mathrm K \Rightarrow q \phi_b=(0.68 \pm 0.09)\mathrm {eV}
+        \end{equation}
+        
+        综上所述，我们用线性拟合的方法求得的结果为：
+        \begin{enumerate}\label{stats}
+            \item 品质因子 $n=1.317\pm 0.008$
+            \item 串联电阻 $R=(-65\pm 31)\Omega$
+            \item 理查逊常数 $A^{**}=(8\pm 3) \mathrm{A/cm^2 K^2}$
+            \item 肖特基势垒高度 $q \phi_b=(0.68 \pm 0.09)\mathrm {eV}$
+        \end{enumerate}
+    \subsection{非线性拟合}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=120mm]{nonlinear}
+            \caption{\label{fig:nonlin}%
+            300 K 下$I$—$V$ 关系，以及非线性拟合结果}
+        \end{figure}
+        由我们在\ref{stats}计算得的数据，虽然$V\gg IR$的条件的确满足，但品质因子$n\approx 1$的条件其实有不小的偏离。所以我们不妨利用\ref{eq:phi}中已求得的参数$q\phi_b$当作已知量，考虑利用表\ref{tab:V-I2}的数据，采用非线性拟合求剩余的未知参数。
+        
+        $T$固定为300.43 K 时，根据式\ref{eq:1}，我们将$V$反解出来，表示为以$n$，$R$和$I_0$为参数的关于$I$的函数：
+        \begin{equation}
+            V(I;n,R,I_0)=IR+\frac{nkT}{q}\ln\left(1+\frac{I}{I_0}\right)
+        \end{equation}
+        将我们用线性拟合得到的结果作为初始参数，用数值优化软件\footnote{%
+        python scipy.optimize.curve\_fit}
+        拟合的结果：
+        \begin{enumerate}
+            \item $n=1.20 \pm 0.01$
+            \item $R=(3.2 \pm 0.7) \Omega$
+            \item $I_0=(0.024\pm 0.002) \mu \mathrm{A} \Rightarrow A^{**}=(24\pm 2)\mathrm{A/cm^2 K^2}$
+        \end{enumerate}
+        拟合曲线如图\ref{fig:nonlin}所示。
+        
+        我们看到，以上两种方法的结果还是要不小的差别的。非线性拟合的结果并不依赖于一些勉强的假设。此外从图\ref{fig:nonlin}中看出采点是比较均匀的，而线性拟合对自变量采用的某些非线性变换（如求倒数）又引入了很大的误差。综上我们可以认为，非线性拟合得到的结果是更可靠的。
+
+\section{总结}
+    通过本实验，学习了金属半导体接触的有关基础理论知识；了解和掌握肖特基势垒的测量方法；测定了肖特基势垒高度$q \phi_b=(0.68\pm 0.09)\mathrm{eV}$，理查逊常数$A^{**}=(24\pm 2)\mathrm{A/cm^2 K^2}$，品质因子$n=1.20 \pm 0.01$，串联电阻$R=(3.2 \pm 0.7) \Omega$。
+\section{致谢}
+    感谢指导老师许福军，做了一些很生动的比方使我对原理部分有了更深入的理解。
+
+\begin{thebibliography}{}
+    \bibitem{Book} 吴思诚, 荀坤 2015 近代物理实验（第四版）（北京：高等教育出版社）.
+    \bibitem{Book} 赵凯华, 罗蔚茵 2001 新概念物理教程—量子物理 （北京：高等教育出版社）
+\end{thebibliography}
+
+\clearpage
+\appendix
+\section{实验报告思考题}
+    \subsection{测试电流太大或太小，将会对肖特基势垒高度又怎样的影响？}
+        如测试电流太小，那么$\frac{\d V}{\d I}$和$1/I$ 会很大，造成测量$R$不准确；如果测试电流过大，会造成$V\gg IR$的条件不满足，造成测得肖特基势垒偏大。
+    \subsection{如果品质因子$n$和串联电阻$R$太大，如何对$q\phi_b$进行修正？}
+        考虑$n$和$R$的影响，联合式\ref{eq:2}和式\ref{eq:3}，并且进行化简可以得到
+        \begin{equation}
+            \ln\left(\frac{I}{T^2}\right)=\ln (A_e A^{**}) -\frac{q\left(\phi_b - \frac{V}{n}+\frac{IR}{n}\right)}{1000k}\cdot\frac{1000}{T}
+        \end{equation}
+        本实验的实际情况，$V\gg IR$ 成立得很好，$R$较大的影响可以忽略。但是$n\approx 1$ 的近似偏差较大。通过斜率计算$q\phi_b$应考虑到对$n$的修正。
+
+\end{document}

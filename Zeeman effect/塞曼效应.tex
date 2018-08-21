@@ -1,0 +1,365 @@
+﻿% MpLtX --- a LaTeX Template for Modern Physics Lab
+% Copyright (C) 2013 Modern Phys. Lab, School of Phys., Peking Univ.
+%
+%   MpLtX is a template for experiment report of Modern Physics Lab in
+% Peking University. This template depends on the "revtex4.1" package from
+% APS Journals <http://publish.aps.org/revtex/revtex-faq>
+%
+% To use this template, you should open the package download from APS Journals'
+% website as above and follow instructions from the README file in the package.
+%
+% LaTeX is marvelous for math formulae composition. However, the script grammar
+% is rather difficult to handle. Maybe at the beginning, it's convenient to
+% generate a pretty document. The deeper you went, more weird grammar you got.
+% Before you found out the whole fantesy-like world built by Knuth, Lamport and
+% numerous contributors, you would get numerous strange errors unclearly
+% reported by compiler.
+%
+% Anyway, a lot of people wish to find a general document system which is both
+% easy to use and strong enough to conveniently DIY. Word is easy to use.
+% However, Word can not produce perfect document in art --- the position and
+% size are not well calculated. By the way, it's such a pain to do simple but
+% repeating work in Word such as formating title, generate large data table
+% and etc. These works can be easily done in LaTeX if you know a little about
+% programming. HTML is a easy-to-use language to create static document. It is
+% compatible on all the machines currently because all you need is a simple
+% browser (Firefox, Chrome or IE). In HTML5, the latest version of HTML, you
+% can do colorful presentation about the report. You can present dynamic
+% figures to present your idea clearly. However, the biggest problem for HTML
+% is that this never renders a beautiful math formula in a simple way. HTML
+% indeed has a math engine named as MathML. But this guy is notorious for its
+% unreadable script grammar. So HTML+TeX --- the project MathJax, becomes a
+% candidate of our dream communication media or e-document form. However, it is
+% still under development. If you are interested in Java, JLaTeXMath package may
+% be also a proper one since it provides a LaTeX renderer in Java.
+%
+% This template is modified by students in Peking University.
+%   I am Sun Sibai. Cao Chuanwu shared the draft on RenRen Network. However,
+% the draft did not match the requirement at all. It seems that Cao Chuanwu
+% did not modified the style from package. He just put the origin content
+% into LaTeX format.
+%   I changed the style to satisfy the format requirement and fixed some problem
+% about the incompatibility within the packages.
+%
+% So, if you have suggestions, please improve this template with your power. We
+% will be always glad to see our work useful, popular and wonderful!
+%
+% This template has been tested in TeXLive 2012 with the command:
+% $ xelatex mpltx.tex
+% compile twice.
+%
+% Anyone can modify this template, but don't forget to list the previous
+% developers and add yourself in.
+%
+% Sun Sibai <niasw@pku.edu.cn>
+% Cao Chuanwu <>
+\RequirePackage{fixltx2e} %This package in CTeX is not compatible with revtex4-1
+\documentclass[aps,pre,12pt,preprint,onecolumn,showpacs,showkeys]{revtex4-1}
+\usepackage{ctex}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{setspace,dcolumn}
+\usepackage{subfig}
+\usepackage{hyperref}
+\usepackage{graphicx,psfrag,epsfig}
+\usepackage[font=small,format=plain,labelfont=bf,textfont=it,justification=centering,singlelinecheck=false]{caption}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,bm,upgreek}
+\usepackage{geometry}
+\usepackage[mathscr]{eucal}
+%\usepackage{background} %Waterstamp package
+%\SetBgContents{...的实验报告} %Waterstamp to prevent copying
+%\SetBgScale{5} %Waterstamp setting
+\hypersetup{colorlinks=true}
+\geometry{top=2.54cm,bottom=2.54cm,left=3cm,right=3cm}
+\renewcommand\appendixname{附录}
+\renewcommand\abstractname{}%摘要
+\renewcommand\tablename{表}
+\renewcommand\figurename{图}
+\makeatletter
+\def\@pacs@name{\songti\zihao{-4}{\bf PACS码：}}
+\def\@keys@name{\songti\zihao{-4}{\bf 关键词：}}
+\def\Dated@name{日期：}
+\def\Received@name{\zihao{-5}{接收} }
+\def\Revised@name{\zihao{-5}{修订} }
+\def\Accepted@name{\zihao{-5}{采纳} }
+\def\Published@name{\zihao{-5}{发表} }
+\makeatother
+\linespread{1.3}
+\renewcommand{\labelenumi}{\alph{enumi}.}
+\leftmargini=20mm
+
+\begin{document}
+\title{\bf\heiti\zihao{3}塞曼效应\vspace{15mm}}
+\author{\fangsong\zihao{4}邵智轩\vspace{2mm}}
+\affiliation{\songti\zihao{-4}学号：1400012141\vspace{2mm}}
+\date{\today}
+%\pacs{02.10.Yn, 33.15.Vb, 98.52.Cf, 78.47.dc}
+\keywords{塞曼效应, 汞灯光谱, 能级分裂, F-P 标准具, 超精细结构}
+\email{shaozhixuansh@pku.edu.cn; (86)13381350619}
+
+\begin{abstract}
+\vspace{10mm}
+\begin{spacing}{1.5}
+\songti\zihao{-4}
+塞曼效应是原子谱线在外磁场作用下分裂成若干具有偏振态的谱线的效应. 本实验使用使用气压扫描式 F-P 标准具和光电倍增管, 观察和研究 Hg 放电灯的$546.1\ \textrm{nm}$光谱线及其在弱磁场下的分裂和偏振性. 利用到洛伦兹单位$\tilde L$ 和分裂波数$\Delta \tilde \nu_i$及自由光谱范围$\Delta \nu_R$的关系, 我们可以从实验结果中得到荷质比或磁场的值并同理论值进行对比. 另外, 在实验中还观测到零磁场下谱线的超精细结构, 这对于本实验的一些结果有启发性的意义. 
+\end{spacing}
+\end{abstract}
+\maketitle
+\songti\zihao{-4}
+
+\section{引言}
+塞曼效应是一条光谱线在外磁场作用下分裂成多条具有一定强度并且彼此间有一定间距的子谱线的现象. 该现象由荷兰物理学家彼得·塞曼（Peter Zeeman）在1896 年首次发现, 塞曼本人也因此与其导师洛伦兹共同获得了1902 年的诺贝尔物理学奖.
+	
+塞曼效应是继“法拉第效应”与“克尔效应”之后, 第三个用来说明电磁场对光产生作用的例证. 从塞曼效应的结果中人们可以得到有关能级的数据, 是人们研究能级结构的重要方法之一. 此外, 塞曼效应还可以用来测量等离子体的磁场. 在天体物理学中, 塞曼效应用来测量天体的磁场. 
+
+\section{理论背景} 
+%\subsection{原子的总磁矩与总角动量的关系}
+塞曼效应的谱线分裂是电子磁矩在外磁场中具有不同能量的结果. 电子总磁矩$\bm{\mu}_J$是由自旋磁矩$\bm{\mu}_S$ 和轨道磁矩$\bm{\mu}_L$耦合而成. 在弱磁场和 L-S 耦合情况下, 总磁矩$\bm{\mu}_J$和总角动量$\bm{P}_J$关系为：
+\begin{equation}
+\bm{\mu}_J=-g\frac{e}{2m}\bm{P}_J
+\end{equation}
+\begin{equation}
+g=1+\frac{J(J+1)-L(L+1)+S(S+1)}{2J(J+1)}
+\end{equation}
+其中$g$称为朗德因子, 其表征了单电子的总磁矩与总角动量的关系, 且决定了能级在磁场中分裂的大小.
+%\subsection{外磁场对原子能级的影响}
+在外磁场下, 电子的总磁矩的附加能量为：
+\begin{equation}
+\Delta E=-\bm{\mu}_J\cdot\bm{B}=g\frac{e}{2m}P_J B \cos{\beta}
+\end{equation}
+其中$\beta$为总角动量$\bm{P}_J$与外磁场$\bm{B}$的夹角. 由角动量量子化条件, $P_J$的分量只能是$\hbar$的整数倍. 因此, 
+\begin{equation}
+\Delta E=M g \frac{e \hbar}{2m}B=M g \mu_B B,\ M=J,\ (J-1),\ ...,-J
+\end{equation}
+
+这样, 无外磁场时的一个能级, 在外磁场作用下分裂成$2J+1$个子能级. 
+%\subsection{塞曼能级跃迁与选择定则}
+两个能级$E_2$（高）与$E_1$（低）之间的跃迁满足选择定则：$\Delta M=0, \pm1$（当$\Delta J=0$时, 不存在$M_2=0 \to M_1=0$的跃迁）, 辐射频率$\nu$满足$\nu=(E_2-E_1)/h$. 在外磁场中, 上、下能级分别分裂为$2 J_2+1$和$2 J_1+1$个能级, 分裂后的新谱线与原谱线的波数差为：
+\begin{equation}
+\Delta \tilde \nu=\frac{1}{c}\Delta \nu=(M_2 g_2-M_1 g_1)\tilde L,\ \tilde L =\frac{eB}{4\pi m c}=0.467 B
+\end{equation}
+其中$\tilde L$称为洛伦兹单位, 若$B$的单位为$\mathrm T$, 则$\tilde L$的单位为$\mathrm{cm}^{-1}$. 
+%\subsection{塞曼光谱的偏振性}
+\begin{figure}[h]
+\centering
+\includegraphics[width=80mm]{2018-03-16}
+\caption{\label{fig:塞曼谱线的偏振态}%
+塞曼谱线的偏振态}
+\end{figure}
+
+$\Delta M=0$时, 垂直于磁场观察时产生线偏振光, 偏振方向平行于磁场, 称为$\pi$线. 平行于磁场观察时$\pi$成分不出现. 
+
+$\Delta M=\pm 1$时, 垂直于磁场观察时, 产生线偏振光, 偏振方向垂直于磁场, 称为$\sigma$线；平行于磁场方向观察时, 产生圆偏振光. $\Delta M =  1$, 偏振转向时沿磁场方向前进的螺旋转动方向；$\Delta M=-1$时方向相反. 
+
+塞曼谱线的偏振性可以用原子和发出的光子作为整体的角动量守恒来解释. 
+
+%\subsection{分裂谱线的强度}
+\begin{table}[h]
+\caption{\label{tab:table1}%
+垂直磁场方向的谱线的理论相对强度}
+\begin{tabular}{|c|c|c|}
+\hline
+&$M_J \to M_J \pm 1$ ($I_\sigma$) &$M_J \to M_J$ ($I_\pi$)\\\hline
+$J \to J$&$\frac{1}{4}(J\pm M_J +1)(J\mp M_J)$&$M_J^2$\\\hline
+$J \to J+1$&$\frac{1}{4}(J\pm M_J+1)(J\pm M_J +2)$&$(J+1)^2-M^2$\\\hline
+$J \to J-1$&$\frac{1}{4}(J\mp M_J)(J\mp M_J-1)$&$J^2-M^2$\\\hline
+\end{tabular}
+\end{table}
+%\subsection{汞灯$546.1 \mathrm{nm}$谱线的塞曼分裂}
+$546.1 \mathrm{nm}$是 Hg 原子 $6\mathrm s 7\mathrm s \prescript{3}{}{\mathrm S}_1 \to 6 \mathrm{s} 6 \mathrm{p} \prescript{3}{}{\mathrm P}_2$的跃迁. $g_2=2,\ g_1=\frac{3}{2}$. 分裂成九条谱线, 谱线位置与强度如图~\ref{fig:分裂示意图}所示,  其中相对强度的计算公式见表~\ref{tab:table1}. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=150mm]{01}
+\caption{\label{fig:分裂示意图}%
+汞$546.1\mathrm{nm}$谱线的塞曼分裂示意图. 左图显示了分裂后的9条谱线, 编号与右图一一对应. 右图中间 0 点表示无磁场时的谱线位置, 横坐标为谱线的裂距, 单位为$\tilde L$. 纵坐标的绝对值表示谱线的相对强度. 横线上方为$\pi$成分, 下方为$\sigma$成分. }
+\end{figure}
+%\subsection{F-P 标准具原理}
+ 
+\section{实验装置}
+\begin{figure}[h]
+\centering
+\includegraphics{03}
+\caption{\label{fig:实验装置}%
+塞曼实验装置图. $\mathrm O$为汞灯; $\mathrm N$, $\mathrm S$为电磁铁磁极; $\mathrm L_1$, $\mathrm L_2$为透
+镜; $\mathrm P$为偏振片; $\mathrm F$为$546.1 \mathrm{nm}$滤光片; F-P 为法布里-珀罗标准具, 间隔圈厚度$h=2\mathrm{mm}$; $\mathrm{PEMT}$为光电管; $\mathrm{H}$为光阑架, 可放置毛玻璃或小孔光阑; $\mathrm{W}$为观察小孔光阑的活动窗口; 信号经放大器放大后输入计算机, $\mathrm{X}$分量为气压, $\mathrm{Y}$分量为光电流.}
+\end{figure}
+
+汞灯发出的光经 $\mathrm{L}_1$ 后变为近平行光, （测量$\sigma$光或$\pi$光时）可通过 P 滤出某一偏振方向的成分, 再通过窄带干涉滤光片 F 得到546.1 nm 附近的光谱. 经F-P 标准具和$\mathrm L_2$后在H处得到一组相干同心干涉圆环. 圆环的中心光斑经小孔光阑进入光电管, 光信号转换为电信号经过放大器放大输入计算机. 实验过程中, 控制器操纵步进电机向F-P 标准具内加压改变F-P 标准具内空气折射率,F-P 标准具内气压输入计算机, 利用计算机内软件处理数据, 在计算机上生成连续扫描频谱.
+
+F-P 原理为多光束干涉, 当光程差为波长整数倍时产生干涉极大值: 
+\begin{equation}
+2 n h \cos \theta=N \lambda
+\end{equation}
+扫描式干涉仪实质是连续改变光程差$\Delta l$, 从而连续扫描干涉光谱序及序内各光谱线. 气压扫描式标准具通过改变腔内气压从而改变折射率$n$, 这种方法简单可靠, 不会破坏两镜的平行性.
+
+标准具具有一定的色散范围, 当研究的谱线波长差大于仪器的色散范围时, 两套花纹之间就会发生重叠或错序. 标准具所允许的不同波长的干涉花纹不重叠的最大波长差：
+\begin{equation}
+\Delta \lambda_R=\lambda_2-\lambda_1=\frac{\lambda^2}{2h}
+\end{equation}
+从而最大波数差：
+\begin{equation}
+\Delta \tilde{\nu}_R=\frac{1}{2h}
+\end{equation}
+在本实验中标准具间隔圈间距为$h=2\mathrm{mm}$, $\Delta \tilde{\nu}_R=1/(2h)=2.5  \mathrm{cm}^{-1}$, 可见标准具只能用来研究很窄的光谱范围.  而本实验裂距的理论值为$4\tilde{L}=4\times0.467B\approx1.9\mathrm{cm}^{-1}$, 是在F-P的自由光谱范围内的。
+
+
+
+\section{实验过程}
+本实验的重点与难点在于光路的调节. 首先要调准直（共轴）, 其次要将F-P 标准具镜片调平行. 调平行和调准直是相互独立互不干扰的, 而调平行, 尤其是细调之前也需要先调准直. 调准直的目的是使汞灯的像、干涉圆环中心、光阑三者重合，从而保证信号强度最大. 调平行的目的提升谱线的质量与分辨能力. 更具体的操作流程可详见附录 B. 
+
+\section{结果与分析}
+\subsection{无磁场时的光谱}
+\begin{figure}[h]
+\centering
+\includegraphics[width=120mm]{04}
+\caption{\label{fig:无磁场}%
+零磁场下的$546.1 \mathrm{nm}$光谱}
+\end{figure}
+可以比较清楚地看到主峰左右两侧地超精细结构. 
+
+\subsection{$1\mathrm T$磁场下的9条谱线}
+将励磁电流加到$5.03\mathrm{A}$, 磁场$B=1.0\mathrm{T}$. 观察谱线在$1\mathrm{T}$磁场下的分裂谱线如图~\ref{fig:fig1}. 各峰的相对位置和相对强度的数据见表~\ref{tab:table2}. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=140mm]{05}
+\caption{\label{fig:fig1}%
+$1\mathrm T$磁场下, $546.1 \mathrm{nm}$光谱分裂成9条}
+\end{figure}
+\begin{table}[h]
+\caption{\label{tab:table2}%
+$\mathrm{Hg}$ $546.1 \mathrm{nm}$子谱线在$1\mathrm{T}$磁场下分裂光谱峰值（X为气压信号, Y为光强信号\footnote{未减去背景光}）}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{mV}&1&2&3&4&5&6&7&8&9\\\hline
+\multirow{2}{*}{\uppercase{\romannumeral 1}序}&X&245&323&400&475&555&632&713&785&871\\
+\cline{2-11}&Y&216&516&876&852&1004&844&980&556&268\\\hline
+\multirow{2}{*}{\uppercase{\romannumeral 2}序}&X&1074&1152&1228&1302&1382&1459&1539&1612&1697\\
+\cline{2-11}&Y&224&536&896&860&1008&844&980&552&268\\\hline
+\end{tabular}
+\end{table}
+
+数据中含有背景噪声. 可以通过找数据中光强的最小值来确认背景光大小. \uppercase{\romannumeral 1}序中光强的最小值$Y_{01}=52\mathrm{nA}$, \uppercase{\romannumeral 2}序中光强最小值$Y_{01}=56\mathrm{nA}$, 平均背景光$Y_0=54\mathrm{nA}$, 已在图~\ref{fig:fig1}标出. 
+
+\begin{table}[h]
+\caption{\label{tab:table3}%
+子谱线强度与理论值对应关系. 已考虑零点修正, 以$Y'_1$为$\frac{1}{2}$个单位}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+&1&2&3&4&5&6&7&8&9\\\hline
+$\frac{Y'}{2Y'_1}$&0.500&1.418&2.476&2.371&2.806&2.324&2.724&1.465&0.629\\\hline
+理论值&0.500&1.500&3.000&3.000&4.000&3.000&3.000&1.500&0.500\\\hline
+\end{tabular}
+\end{table}
+
+在表~\ref{tab:table3}中将各谱线的相对强度与理论值做对比, 发现与理论值有明显差异：实际测量到的副峰与主峰的相对强度之比偏小. 这可能是因为理论值没有考虑超精细结构的存在. 超精细结构在磁场中也会分裂成一定的展宽, 叠加在副峰上, 贡献了一部分强度, 使副峰强度相对于主峰的相对强度比理论值高. 
+
+此外, 比较主峰两侧对称位置处的谱线强度, 主峰右侧的谱线强度略微高于左侧. 这一不对称性也是由超精细结构引起的. 如7号谱线显著地强于3号, 可以部分归因于图~\ref{fig:无磁场}里地主峰右侧的超精细结构小峰. 上述特征从图~\ref{fig:fig1}也可以明显地看出.
+
+\begin{table}[h]
+\caption{\label{tab:table4}%
+$\mathrm{Hg}$ $546.1\mathrm{nm}$子谱线在$1\mathrm{T}$磁场下的裂距的实测值\footnote{$\Delta \tilde{\nu}_{exp}=\Delta \tilde{\nu}_R\times \frac{\Delta x}{|X_5^{\uppercase{\romannumeral 2}}-X_5^{\uppercase{\romannumeral 1}}|}$, $\Delta \tilde{\nu}_R=2.5\mathrm{cm}^{-1}$, $|X_5^{\uppercase{\romannumeral 2}}-X_5^{\uppercase{\romannumeral 1}}|=827$}与理论值\footnote{$\Delta \tilde{\nu}_{th}=(M_2 g_2 -M_1 g_1)\tilde{L}$, $\tilde{L}=0.467B$}比较}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+&$\Delta x_1/\mathrm{mV}$&$\Delta x_2/\mathrm{mV}$&$\Delta \bar{x}/\mathrm{mV}$&$\Delta \tilde{\nu}_{exp}/\mathrm{cm}^{-1}$&$\Delta \tilde{\nu}_{th}/\mathrm{cm}^{-1}$&相对误差\\\hline
+1&310&308&309&0.934&0.934&0.000\\\hline
+2&232&230&231&0.698&0.701&-0.004\\\hline
+3&155&154&155&0.468&0.467&+0.002\\\hline
+4&80&80&80&0.242&0.234&+0.040\\\hline
+5&0&0&0&0&0&0\\\hline
+6&77&77&77&0.232&0.234&-0.008\\\hline
+7&158&157&157&0.478&0.467&+0.023\\\hline
+8&230&230&230&0.695&0.701&-0.008\\\hline
+9&316&315&316&0.955&0.934&+0.022\\\hline
+\end{tabular}
+\end{table}
+
+从表~\ref{tab:table4}的数据可以看出, 各子谱线的裂距与理论值基本吻合. 
+
+\subsection{求荷质比}
+我们可以通过比较裂距的理论值和实际值计算出荷质比, 并于真实值相比较. 选取表~\ref{tab:table4} 中“$\Delta \tilde{\nu}_{exp}$”列的数据, 以第五条谱线为原点, 横坐标为以$\tilde{L}$为单位的理论裂距$\Delta$, 纵坐标为实测裂距, 拟合直线. 求得的斜率即为$\tilde{L}$的测量值, 磁场为已知量$B=1\mathrm{T}$, 由此反推出荷质比$\frac{e}{m}$. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=100mm]{11}
+\caption{\label{fig:fig11}%
+实测裂距与理论理论裂距（以$\tilde{L}$为单位）}
+\end{figure}
+
+拟合出的直线如图~\ref{fig:fig11}. $r^2=0.9998$, 直线方程$\Delta \tilde{\nu}_{exp}=0.470 \Delta+0.002$, 斜率为$\tilde{L}=(0.470\pm0.002)(\mathrm{cm}\cdot \mathrm T)^{-1}$. 由此得到：
+\begin{equation}
+\frac{e}{m}=\frac{4\pi c}{B}\tilde{L}=1.771\times 10^{11} \mathrm{C}/\mathrm{kg}
+\end{equation}
+真实值为$1.759\times 10^{11} \mathrm{C}/\mathrm{kg}$. 实测值与理论值基本符合（+0.6\%）. 
+\subsection{$0.8\mathrm T$磁场下的$9$条谱线}
+将励磁电流加到$3.99\mathrm{A}$, 磁场$B=0.8\mathrm{T}$. 观察谱线在$0.8\mathrm{T}$磁场下的分裂谱线如图~\ref{fig:fig2}. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=120mm]{06}
+\caption{\label{fig:fig2}%
+$0.8\mathrm T$磁场下的塞曼分裂, 以及与$1\mathrm T$磁场下的塞曼分裂的对比\footnote{将两谱线第\uppercase{\romannumeral 2}序的峰做了对齐处理}. 当磁场减小时, 谱线裂距变窄；各条谱线变得不清晰. }
+\end{figure}
+
+与$1\mathrm{T}$磁场下的谱线对比, 可以看到, 当磁场减小时, 谱线裂距变窄, 且各个峰变得不尖锐；各条谱线, 尤其是最边上的两条（1和9）, 变得不清晰. 
+
+\subsection{$1\mathrm T$磁场下的$\pi$线和$\sigma$线}
+引入偏振片, 分别测量$\pi$线和$\sigma$线如图~\ref{fig:fig10}. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=150mm]{10}
+\caption{\label{fig:fig10}%
+红线与蓝线分别是$1\mathrm T$磁场下的$\pi$线与$\sigma$线. 黑色虚线是$\pi$线与$\sigma$线的光强加和, 其形状几乎与图~\ref{fig:fig1}一致}
+\end{figure}
+
+在偏振片选偏后, $\pi$线为中间3条（4、5、6）谱线, $\sigma$线为两侧6条谱线（1、2、3、7、8、9）. 两套谱线是互补的, 当我们把两套谱线的强度叠加起来时, 得到的谱线与图~\ref{fig:fig1}中的完整的9条谱线几乎完全一致. 
+
+还有一个值得注意的现象：$\pi$线的左右两侧也有两个小峰, 而且我调整偏振片重新测量后依然存在. 可见这两个小峰并非由于偏振片角度有偏差而滤光不完全, 而应归因于超精细结构的成分, 这一成分的偏振性质与$\sigma$线不同, 因此没有被滤掉. 也正是由于这一原因, $\pi$线的形状具有明显的不对称性, 而$\sigma$线与之相比对称性就很高. 
+
+\section{结论}
+本次实验使用气压扫描F-P 标准具对汞灯546.1nm 谱线在磁场下的塞曼分裂谱
+进行了测量. 实验中, 测量了无磁场、$0.8\mathrm{T}$磁场、$1\mathrm{T}$磁场下的谱线, 并进行了对比. 而后, 利用偏振片, 区分了塞曼分裂谱中偏振情况不同的两套谱线：$\pi$线与$\sigma$线. 利用5A 励磁电流对应磁场下的分裂谱, 确定了各谱线裂距与相对强度, 并与理论预估值进行了比较. 发现裂距与理论值很接近, 而强度差距较大, 并用超精细结构予以解释. 最后通过数据计算了荷质比, $1.771\times10^{11} \mathrm{C}/\mathrm{kg}$, 并于真实值对照, 数值基本吻合. 
+
+\section{致谢}
+感谢指导此实验的蒋莹莹老师, 和与我合作的, 思路清晰的李少楠同学. 
+
+蒋老师言传身教了许多调光路的心得, 展现了非常耐心的教学态度与循循善诱的教学方法, 指导我们思考现象背后的深刻原理. 尤其令我难忘的是, 当我和同伴在细调平行度时由于怕调不回来而踌躇不前, 不敢大动时, 蒋老师教我们敢于把仪器彻底打乱再重新往回调, 虽然确实又花了很大的力气才调回来, 但也使仪器调到了比之前更优的状态. 所以, 切莫因为存着“尽量保持前人调好的仪器”的念头而放弃了自我锻炼, 追求更优的机会. 
+
+\begin{thebibliography}{}
+\bibitem{Book} 吴思诚, 荀坤 2015 近代物理实验（第四版）（北京：高等教育出版社）.
+\bibitem{Book}  赵凯华, 罗蔚茵 2001 新概念物理教程—量子物理 （北京：高等教育出版社）
+\end{thebibliography}
+\clearpage
+\appendix
+\section{思考题}
+\subsection{从塞曼分裂谱中如何确定能级$J$的量子数？}
+首先观察$\pi$线。如果$\Delta J=0$，那么$M_2=0\to M_1=0$的跃迁禁戒，$\pi$线为偶数条$2J_{min}$；如果$\Delta J=\pm 1$，$\pi$线为奇数条$(2 J_{min}+1)$。由此可以区分这两种情况，并且确定两能级中较小的$J$量子数，另一$J$量子数则为$J$或$J+1$。至于这两个$J$量子数哪个处在高能级，哪个处在低能级，似不能确定。
+
+\subsection{根据塞曼分裂谱的裂距如何确定能级的$g$因子？}
+首先观察$\pi$线，若为正常塞曼效应，$\pi$线只有一条，$g=1$，这时$\sigma$线只有两条，波长一增一减。
+
+若$\pi$线不止一条，则为反常塞曼效应，这时的$\sigma$线亦不止两条。利用$\pi$线之间裂距可以首先确定$|g_2-g_1|$的大小。而后，从每一个$\pi$线出发去寻找在其两侧位置对称（强度不必相等）的两条$\sigma$线，并且使得每条$\pi$线与其两侧匹配到的$\sigma$线的间距是一个常量。这个量就是较小的那个$g$的值。如此，可以将两个能级的$g$都确定。
+
+拿本实验的$546.1 \mathrm{nm}$谱线举例来说，4,5,6是3条$\pi$线，1,2,3,7,8,9是6条$\sigma$线，1和7位置关于4对称，2和8位置关于5对称，3和9位置关于6对称. 它们之间两两的$\Delta M$之差为1, 而$\Delta (M g)$之差可通过实测的裂距确定为约等于3/2，故较小的$g\approx3/2$。
+
+\section{详细的光路调节步骤}
+\subsection{准直调节}
+点燃汞灯, 确保其处于磁场几何位置中心. 移动标准具使得汞灯正好处于标准具的中心轴线上. 将准直透镜$\mathrm{L}_1$和干涉滤光片 F 引入光路, 先目测粗调共轴, 并使各光具的高度一致；调节透镜和汞灯的距离使汞灯的像在毛玻璃上尽量明亮清晰. 从H 处敞口往里看可看到一组绿色的同心圆条纹. 在H 处装上毛玻璃, 则绿色的等倾干涉条纹呈在毛玻璃上. 调节 F-P 架座上的螺丝使条纹中心落在毛玻璃屏的中心. 通过观察窗口确认汞灯的像与条纹圆心重合. 此时可以取下毛玻璃对平行度进行粗调（方法见下）. 
+
+在对平行度进行细调之前, 仍需进一步调准直. 在 H 处安装针孔光阑S, 需要确保汞灯的像, 针孔, 和等倾干涉环的圆心三者重合. 为此可用一小灯从针孔后照向标准具, 标准具反射光在成像透镜焦面上成一亮点S'. 调节反射亮点与针孔重叠, 就保证了针孔位于干涉图中心. 此时可以进行平行度的细调. 
+
+细调完成后, 换上光电倍增管 PEMT. 由于光电管的光阑与针孔光阑的位置略有不同, 所以需要重新调准直. 光电管自带一个可以从小孔发绿光的小灯, 利用这个小灯可以用和之前一样的方法调准直, 确保针孔、圆心、汞灯像三者重合. 
+
+注意每次更换光电管或针孔光阑后都需要重新调准直. 
+\subsection{平行度调节}
+\subsubsection{粗调}
+不改变腔内空气折射率$n$, 仅通过移动眼睛看等倾干涉条纹中心的吞吐来判断和调节. 保持出射窗口H 敞开, 将凸透镜$L_1$向F-P 标准具靠近, 从H 口向内看整个视场已被照明, 这时可观察到一组同心干涉圆环. 观察者的眼睛分别沿着圆心和上方、左下方、右下方三个旋钮的连线方向移动时, 检验圆环的直径是否随眼睛的移动而变化, 即圆环的中心有无吞吐. 若眼睛向某个方向移动时中心有亮斑“冒出来”, 或圆环直径变大, 则说明这个方向$h$大, 需要把这个方向的旋钮压紧, 或把相反方向的旋钮放松. 
+\subsubsection{细调}
+平行度细调这一步是最困难的, 但同时也是提高谱线质量的关键. 调好准直后, 加磁场时, 对F-P 腔内气压进行连续扫描, 与此同时把一只眼睛贴在针孔上, 从针孔后可依次看到透过的各子谱线相干极大的光强信号. 目标是将视场调成模糊一片的亮斑或暗区, 升压过程中条纹不明显向某一方向移动, 而只是明暗变化, 或有模糊的向四周扩展的样式. 如果升压时条纹明显地向某一方向移动, 说明这个方向的$h$减小, 需要把这个方向的距离顺时针调大. 
+
+为了让变化显著一些, 可以把扫描速度调快（最高档）. 尤其注意观察复位时的条纹变动趋势, 这时的条纹变动趋势特别显著. 
+
+\subsection{其他注意事项}
+标准具应尽量离汞灯中心近一些. 我第一次测得的谱线光强较小, 正是由于进光量不足, 重新调整标准具和汞灯的距离后信号强度明显增大. 此外, 准直的调节对信号强度也很重要. 
+
+细调时如果不易判断条纹是否已经达到目标, 不应害怕大幅度调节, 可尝试彻底打乱重调, 从明显的等厚条纹开始向圆心处调节. 重点调节使条纹清晰度变化最显著的那个旋钮. 
+
+光电倍增管偶尔需要调零. 气压读数在复位后时有异常, 可以放气重置.  扫描过程中速度设为第二档. 
+\end{document}

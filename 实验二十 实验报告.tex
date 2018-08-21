@@ -1,0 +1,194 @@
+\documentclass[11pt]{article}
+\usepackage{CJK,latexsym,bm,float,indentfirst}
+\usepackage{graphicx}
+\setlength{\parskip}{0.5ex}
+\setlength{\textwidth}{140mm}
+\setlength{\textheight}{220mm}
+\setlength{\voffset}{-18.4mm}
+\setlength{\hoffset}{-8.4mm}
+\def \degree{^{\circ}}
+\begin{document}
+\begin{CJK}{GBK}{song}
+\begin{center}
+\Large{\CJKfamily{hei}实验二十 光衍射的定量研究  实验报告}\\
+\normalsize
+1400012141\\
+邵智轩\\
+周二下午3组11号\\
+2016年11月15日
+\end{center}
+\section{数据处理}
+\subsection{单缝夫琅禾费衍射}
+激光波长：$\lambda=632.8\textrm {nm}$
+
+缝宽参考值：$a_0=175\mu \textrm {m}$
+\begin{table}[H]
+\caption{单缝夫琅禾费衍射}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+&主极强$I_0$&左次极强$I_1$&右次极强$I_2$\\\hline
+光强$I$&3113&153&167\\\hline
+位置$x/\textrm {mm}$&8.270&4.070&12.465\\\hline
+\end{tabular}
+\end{table}
+图像对称性要求：$\frac{2|I_1-I_2|}{I_1+I_2}\leq10\%$
+
+图像可视性要求：$4.0\%\leq\frac{I_1+I_2}{2I_0}\leq5.5\%$
+
+代入所测数据，求得：
+$$\frac{2|I_1-I_2|}{I_1+I_2}=8.8\%$$
+$$\frac{I_1+I_2}{2I_0}=5.1\%$$
+
+由单缝夫琅禾费衍射公式：
+$$I=I_0(\frac{\sin \alpha}{\alpha})^2, \alpha=\frac{\pi a \sin{\theta}}{\lambda}$$
+当$\alpha=1.43\pi$时，光强出现次极大。则在傍轴条件下有
+$$a=\frac{1.43\lambda}{\sin \theta}=\frac{1.43\lambda z}{\Delta x}$$
+其中$z$为衍射屏与像平面的距离，$\Delta x$为主极大与次极大之间的距离。
+
+实验测得：
+$$z=95.0-15.5+0.4=79.9\textrm{cm}, \Delta x=\frac{x_2-x_1}{2}=4.198\textrm{mm}$$
+代入数据，得$a=\frac{1.43\lambda z}{\Delta x}=\frac{1.43\times632.8\textrm{nm}\times79.9\textrm{cm}}{4.193\textrm{mm}}=172.2\mu\textrm{m}$
+
+\subsection{多缝夫琅禾费衍射（五缝）}
+注：实验本要求测量三缝夫琅禾费衍射的缝宽和缝间距，而我一开始没看清要求，做了五缝。好在五缝与三缝可用相同的原理和公式类似地计算缝宽和缝间距，并观察多缝衍射的特征，所以私以为并无大碍。
+
+激光波长：$\lambda=632.8\textrm {nm}$
+
+缝宽参考值：$a_0=40\mu \textrm {m}$
+
+缝间距参考值：$d_0=90\mu \textrm {m}$
+
+处理数据时发现，一开始打印的图像初始点设置不够合理（离主极大的位置不够远），导致有些必要的数据没有获得（暗线位置）。所以改用实验测得的另一组数据计算缝宽和缝间距。数据列表如下：
+\begin{table}[H]
+\caption{五缝夫琅禾费衍射}
+\centering
+单位：$\textrm{mm}$\\
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+中心主极大$x_0$&左相邻主极大$x_1$&右相邻主极大$x_2$&左单缝衍射暗纹$x_3$&右单缝衍射暗纹$x_4$\\\hline
+12.980&7.720&18.280&0.755&24.980\\\hline
+\end{tabular}
+\end{table}
+由多缝夫琅禾费衍射公式：
+$$I=I_0(\frac{\sin \alpha}{\alpha})^2 (\frac{\sin{N\beta}}{\sin{\beta}})^2, \alpha=\frac{\pi a \sin{\theta}}{\lambda},\beta=\frac{\pi d \sin{\theta}}{\lambda}$$
+当$\beta=\pi$时，出现与中心主极大相邻的主极大。则在傍轴条件下有
+$$d=\frac{\lambda}{\sin \theta_1}=\frac{\lambda z}{\Delta x_1}$$
+其中$z$为衍射屏与像平面的距离，$\Delta x_1$为中心主极大与相邻主极大的距离。
+
+当$\alpha=\pi$时，出现单缝衍射因子造成的零点（单缝包络线与横轴的交点）。则在傍轴条件下有
+$$a=\frac{\lambda}{\sin \theta_2}=\frac{\lambda z}{\Delta x_2}$$
+其中$z$为衍射屏与像平面的距离，$\Delta x_2$为中心主极大与单缝衍射因子零点的距离。
+
+实验测得：
+$$z=90.6-15.5+0.4=75.5\textrm{cm}, \Delta x_1=\frac{x_2- x_1}{2}=5.280 \textrm{mm}, \Delta x_2 =\frac{x_4-x_3}{2}=12.113\textrm {mm}$$
+代入数据，得：
+$$d=\frac{\lambda z}{\Delta x_1}=\frac{\times632.8\textrm{nm}\times75.5\textrm{cm}}{5.280\textrm{mm}}=90.5\mu\textrm{m}$$
+$$a=\frac{\lambda z}{\Delta x_2}=\frac{\times632.8\textrm{nm}\times75.5\textrm{cm}}{12.113\textrm{mm}}=39.4\mu\textrm{m}$$
+
+\subsection{定性观察衍射图样}
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.06]{1,3.jpg}
+\caption{方孔方阵}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.06]{1,4.jpg}
+\caption{方孔密排}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.06]{1,7.jpg}
+\caption{圆孔方阵}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.06]{1,8.jpg}
+\caption{圆孔密排}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.06]{1,1.jpg}
+\caption{单方孔}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.06]{1,2.jpg}
+\caption{双方孔}
+\end{minipage}
+\end{figure}
+\begin{figure}[H]
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.06]{1,5.jpg}
+\caption{单圆孔}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.06]{2,8.jpg}
+\caption{双缝}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.06]{2,3.jpg}
+\caption{等腰三角形}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.06]{2,4.jpg}
+\caption{矩形孔}
+\end{minipage}
+\end{figure}
+\section{分析与讨论}
+\subsection{实验中测量误差的来源分析，缝宽和间距结果不确定度计算}
+由公式：
+$$a=(1.43)\frac{\lambda z}{\Delta x_1}$$
+可知：
+$$\frac{\sigma_a}{a}=\sqrt{(\frac{\sigma_{\Delta x}}{\Delta x})^2+(\frac{\sigma_z}{z})^2}=\sqrt{\frac 1 3 [(\frac{e_{\Delta x}}{\Delta x})^2+(\frac{e_z}{z})^2]}$$
+误差来自于$z$和$\Delta x$两方面的贡献。
+
+考虑到光路与直尺不完全平行，在钢尺上找衍射屏位置刻度时的对准误差等等因素，$z$的极限误差为$1\textrm{cm}$，极限相对误差$\frac{e_z}{z}=1\%$。
+
+$\Delta x=\frac{x_2-x_1} 2$，实验中$x_1$和$x_2$是用软件的局部寻峰功能或局部寻谷功能获得的。在峰值比较尖锐的地方基本可以直接用局部寻峰功能找到的点，但在峰（谷）比较平缓的地方就需要在获得峰（谷）的大致位置后，点开数据列表，在该范围内根据数据的升降趋势合理估计峰（谷）所在的位置。以单缝衍射次极大峰值附近数据为例：
+\begin{table}[H]
+\caption{次极大缝值附近数据}
+\centering
+\begin {tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+位置$x_2$&12.385&12.390&12.395&12.400&12.405&12.410&12.415&12.420&12.425&12.430\\\hline
+光强$I$&165&165&166&166&166&166&166&166&166&167\\\hline
+位置$x_2$&12.435&12.440&12.445&12.450&12.455&12.460&12.465&12.470&12.475&12.480\\\hline
+光强$I$&167&167&166&166&167&167&167&167&167&167\\\hline
+位置$x_2$&12.485&12.490&12.495&12.500&12.505&12.510&12.515&12.520&12.525&12.530\\\hline
+光强$I$&167&167&167&167&166&166&166&166&166&166\\\hline
+\end{tabular}
+\end{table}
+可以看出，从12.430到12.500之间的点光强值都达到局部极强167，如果用软件的自动局部寻峰功能获得的12.430点作为峰值位置未免不够准确，所以选用这个区间中部的点12.465。故$x_2$的极限误差$e_{x_2}$记为中间点12.465到12.430点的距离0.035。
+
+故$\frac{e_{\Delta x}}{\Delta x}\approx \frac{e_{x_2}}{\Delta x}=1\%$。此处没有考虑其他因素对$\Delta x$测量带来的误差，如衍射图样不对称，光路与光感受器不垂直等也会带来额外的误差。
+
+在单缝衍射实验中，$z$与$\Delta x$ 贡献的不确定度大体相当，最后$\frac{\sigma_a}{a}=1\%$。
+
+另外，在多缝（笔者做的是五缝）衍射实验中，暗线（衍射因子零点）所处的谷局部光强更加平缓，用上述方法估算，$e_{x_2}$达到$0.1\textrm{mm}$。
+
+\subsection{ 夫朗禾费衍射图样与结构之间的关系}
+第一，光束在衍射屏上的什么方位受到限制，则接受屏幕上的衍射图样就沿该方向扩展；
+
+第二，光孔线度越小，对光束的限制越厉害，则衍射图样越加扩展。
+
+第三，衍射屏有什么样的对称性，衍射图样也会反映出相应的对称性。
+
+第四，多缝、多孔的衍射图样大体与单缝、单孔的类似，只是衍射图样更加精细，有更细的光强分布，更多次极大、暗线出现。整个图样为单缝衍射因子和多缝干涉因子共同作用的结果。
+
+\section{收获与感想}
+笔者以前没有参加过物理竞赛，第一次做光的衍射实验。由于光的衍射在生活中也并不常见，所以此前笔者几乎只是在书本上了解衍射的原理、特性。而这次亲手搭建光路，调试仪器，得以近距离观察衍射现象，并进行一些定量分析，对光的衍射现象以及其波的本性有了更深切的体会与认识。
+
+认识到了衍射的放大原理。光的几何线度越小，屏的结构越细微，光波的衍射发散越强烈，衍射图样越宽大。可以通过对衍射图样的测量，反演获得小孔或微结构的信息。这不同于投影仪等几何光学手段的相似放大，而是一种衍射放大，本质上是一种光学变换——夫琅禾费衍射本质上是一种光学傅立叶变换。不同结构下丰富多彩的衍射图样更激发了我对光学学习的热情。
+
+光路的搭建调试也是本次实验成功与否、数据准确与否的关键。笔者在实验中费了很多时间，花了很大力气，才让单缝衍射图样满足对称性和可视性的要求。光学实验中，有很多“细节”需要注意，否则实验精度就达不到要求，心灵手巧很重要！熟能生巧。笔者争取珍惜每次实验的机会，多加练习，掌握普遍的实验技能。
+
+\end{CJK}
+\end{document}

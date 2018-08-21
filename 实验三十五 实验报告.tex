@@ -1,0 +1,195 @@
+\documentclass[11pt]{article}
+\usepackage{CJK,latexsym,bm,float,indentfirst}
+\usepackage{graphicx, longtable}
+\setlength{\parskip}{0.5ex}
+\setlength{\textwidth}{140mm}
+\setlength{\textheight}{220mm}
+\setlength{\voffset}{-18.4mm}
+\setlength{\hoffset}{-8.4mm}
+\def \degree{^{\circ}}
+\begin{document}
+\begin{CJK}{GBK}{song}
+\begin{center}
+\Large{\CJKfamily{hei}实验三十五 阿贝成像原理与空间滤波实验  实验报告}\\
+\normalsize
+1400012141\\
+邵智轩\\
+周二下午3组11号\\
+2017年3月14日
+\end{center}
+\section{数据处理}
+\subsection{测量一维光栅空间频率}
+$f_k=\frac{x'_k}{\lambda F}$，$\lambda=632.8\times10^{-6}\textrm{mm}$，$F=250\textrm{mm}$。
+\begin{table}[H]
+\centering
+\caption{测量一维光栅各级对应的空间频率}
+\begin{tabular}{|c|c|c|c|}
+\hline
+衍射级次$k$&位置 $x/\textrm{mm}$&与零级的距离$x'_k/\textrm{mm}$& 空间频率$f_k/\textrm{mm}^{-1}$\\\hline
+0&23.301&&\\\hline
+1&21.422&1.879&11.9\\\hline
+2&19.545&3.756&23.7\\\hline
+3&17.638&5.663&35.8\\\hline
+\end{tabular}
+\end{table}
+$f_1:f_2:f_3\approx1:2:3$，基频$f_1=11.9 \textrm{mm}^{-1}$。
+\subsection{一维光栅空间滤波}
+在频谱面上放上可调狭缝及其他附加光阑，进行空间滤波。
+\subsubsection{全部通过}
+现象：明暗相间的等间距条纹。$x_0=32.520$，$x'=28.604$，$\Delta N=10$，$d=\frac{x'-x_0}{\Delta N}=0.392$。
+\subsubsection{只让0级通过}
+现象：均匀亮场。
+
+解释：零级只含直流成分。
+\subsubsection{只让0级和$\pm$1级通过}
+现象：条纹间距不变，边缘细节模糊。$x_0=32.520$，$x'=28.600$，$\Delta N=10$，$d=\frac{x'-x_0}{\Delta N}=0.392$。
+
+解释：$\pm2$级及以上的高频信息丢失，导致边缘模糊。
+\subsubsection{除$\pm1$级外通过}
+现象：条纹变密。$x_0=32.100$，$x'=30.185$，$\Delta N=10$，$d=\frac{x'-x_0}{\Delta N}=0.192$。$f_2/f_1=2.04\approx2$。
+
+解释：滤掉$\pm1$级谱斑后，$\pm2$级谱斑成为主要交流成分。由1.1中的讨论可知，2级谱斑对应的空间频率$f_2=2f_1$。
+\subsubsection{除0级外通过}
+现象：除原透光位置仍是亮的外，原来不透光的位置也变亮了，甚至比前者更亮。（衬比度反转）。条纹宽度（空间频率）不变。
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.06]{lab-35-figure-1.jpg}
+\caption{除0级外通过}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.06]{lab-35-figure-2.jpg}
+\caption{滤波实验说明}
+\end{minipage}
+\end{figure}
+
+解释：像面上的复振幅分布差不多仍是方波（只是由于透镜孔径有限少了一些高频成分），减去了直流成分，即复振幅函数为原来的周期性方波函数减去一常数（如下图第三行所示）。像面上的光强分布如下图中第四行所示。
+
+\subsection{二维正交光栅}
+在频谱面上看到二维离散的光点阵，即为正交光栅的频谱。
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.20]{lab-35-figure-3.jpg}
+\caption{二维光栅频谱面}
+\end{figure}
+当用小孔滤光只让零级谱斑通过时，显示均匀亮场。
+
+当用纵狭缝滤光时，观察到横条纹（沿纵向的周期图形）。
+
+当用横狭缝滤光时，观察到纵条纹（沿横向的周期图形）。
+
+当用斜狭缝滤光时，观察到与滤光条正交的斜条纹（沿原方向的周期图形）。
+
+解释：某一方向的谱斑记录的是图形在该方向上的周期信息，对应的是图形在该方向上的空间频率。若只留下纵方向的谱斑，就只保留了纵方向的周期信息，显示与之正交的方向，即横向的条纹。
+
+由于实验时间有限，没有测量条纹间距。但通过理论分析，由于空间频率$f_=\frac{d}{\lambda F}$，$f$与频谱面上谱斑与零级的距离$d$成正比。那么由${d_x}^2+{d_y}^2=d'^2$，应有${f_x}^2+{f_y}^2={f'}^2$。特别的若$f_x=f_y=f_0$，斜频谱沿$45\degree$方向，$f'=\sqrt2 f_0$，则斜条纹的条纹间距应为横纵条纹的$1/\sqrt2$倍。
+
+\subsection{正交光栅与一个透明的“光”字的叠加}
+\subsubsection{“光”字的频谱面}
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.53\textwidth}
+\centering
+\includegraphics[scale=0.14]{lab-35-figure-4.jpg}
+\caption{光栅与“光”字的叠加的频谱面}
+\end{minipage}
+\begin{minipage}[t]{0.46\textwidth}
+\centering
+\includegraphics[scale=0.08]{lab-35-figure-5.jpg}
+\caption{放大后的“光”字像面}
+\end{minipage}
+\end{figure}
+现象：与二维正交光栅的频谱面看上去几乎一样。
+
+解释：二维周期函数的谱斑相当于若干离散的$\delta$函数，而“光”字的频谱$\tilde G$是一弥散的连续谱，且由于其笔画较粗，其空间低频成分较多，主要谱成分集中在0频附近的一低频范围。频谱面上是一个个$\delta$函数与$\tilde G$的卷积，由于任意函数与$\delta$函数的卷积将再现这函数自身（$\delta(x-x')\delta(y-y') * \tilde G (x,y)=\tilde G (x-x',y-y')$），所以结果是在原点阵的各个亮点位置都产生一个“光”字的频谱。也就是说，点阵中的任意一个谱斑周围都弥散着“光”字的频谱。
+\subsubsection{$\phi=1\textrm{mm}$的圆孔光阑使零级通过}
+现象：光屏接收，能看见“光”字，与原“光”字区别不大。读数显微镜观察，网格消失。
+
+解释：只留下弥散在零级周围的“光”字的低频的离散谱，故能很好的还原光字（低频信息）。而高频的周期信息被过滤，故无法看到网格。
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.08]{lab-35-figure-6.jpg}
+\caption{$\phi=1\textrm{mm}$时的“光”字}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.1]{lab-35-figure-7.jpg}
+\caption{$\phi=0.3\textrm{mm}$时的“光”字}
+\end{minipage}
+\end{figure}
+
+\subsubsection{$\phi=0.3\textrm{mm}$的圆孔光阑使零级通过}
+现象：光屏接收，能看见“光”字，“光”字较暗，边缘轮廓圆滑，不锐利。读数显微镜观察，网格依然消失。
+
+解释：受光阑的限制，只留下“光”字的离散谱中较低频的部分，高频部分丢失，导致图像细节丢失。
+
+\subsubsection{理论计算使网格（12 条/mm）消失和字迹（笔画粗0.5mm）模糊滤波器应有的孔径，并解释之。}
+网格的空间频率$f=12\textrm{mm}^{-1}$，在频谱面上与零点的距离$d=Ff\lambda=12\times250\times632.8\times10^{-6}=1.90\textrm{mm}$。所以要使网格消失，需要孔径$\phi<1.90\textrm{mm}$。这就解释了为什么在$\phi=1\textrm{mm}$和$\phi=0.3\textrm{mm}$时都无法看到网格。
+
+字迹笔画的空间频率可认为$f=1/0.5\textrm{mm}=2\textrm{mm}^{-1}$。则在频谱面上与零点的距离应为$d=\frac1 6 \times 1.90=0.32\textrm{mm}$。所以要使网格消失，需要孔径$\phi<0.32\textrm{mm}$。这就解释了为什么在$\phi=1\textrm{mm}$时“光”字仍清晰锐利，而$\phi=0.3\textrm{mm}$时“光”字边缘模糊不清。
+
+\subsubsection{将频谱面上光阑平移，使不在光轴上的一个衍射点通过光阑}
+现象：光屏接收，有光字，稍暗。读数显微镜观察，无法看到网格。
+
+解释：由前所述，频谱面上是一个个$\delta$函数与$\tilde G$的卷积，结果是在原点阵的各个亮点位置都产生一个“光”字的频谱。也就是说，点阵中的任意一个谱斑周围都弥散着“光”字的频谱。所以非光轴上的谱斑仍能还原光字，只是亮度有所下降。
+
+\subsection{漏光十字板高通滤波}
+在频谱面上用空间滤波器挡去频谱的中心部分。
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.08]{lab-35-figure-8.jpg}
+\caption{高通滤波后的十字板像}
+\end{figure}
+现象：十字板像的中间变暗且有涂抹感（原来亮度很均匀），而十字边缘较亮且很细锐。
+
+解释：只保留了高频信息（边缘，棱角等），滤去低频信息（十字的中间部分）。
+
+\subsection{$\theta$调制实验}
+白光照在薄膜光栅上，频谱面上在三个不同方向上看到衍射斑，分别对应不同取向的光栅，这些衍射极大值除零级以外均有色散。在花对应的方向上在红色光取极大值的位置烧个洞，让红色光通过；同样在叶子对应的方向让绿光通过，在盆对应的方向让黄色通过。
+
+现象：看到红花、绿叶、黄盆。
+
+解释：白光经过光栅后有色散的效应，（除零级外）不同波长的光的衍射角会散开。以不同取向的光栅调制物面上的不同部位，在每个取向上根据需要的颜色选取合适的衍射角$\theta$，像面上各相应部位将呈现不同的颜色。这就是$\theta$调制的原理。
+
+
+\subsection{卷积现象的观察}
+将20条/mm和40条/mm的两个光栅重叠起来，观察并记录其频谱特点。转动两光栅中的一个，频谱面上有何变化？
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.7]{lab-35-figure-9.jpg}
+\caption{两光栅正交时的频谱}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.9]{lab-35-figure-10.jpg}
+\caption{逆时针旋转20/mm光栅后的频谱}
+\end{minipage}
+\end{figure}
+
+现象：正交时观察到类似二维正交光栅的频谱，但长宽比约为2:1。对应20条/mm的光栅的方向上频谱散开得更窄，对应40条/mm的光栅的方向上频谱散开得更宽。若逆时针转动20条/mm的光栅（纵条纹），则频谱面上的横向展开的谱斑也逆时针转动。
+
+解释：某方向$x$的一维光栅的频谱相当于该方向上若干离散的$\delta$函数：$a_0\delta(x)+ a_1 \delta(x \pm x_1)+ a_2 \delta(x\pm x_2)$…；另一方向$y$的一维光栅的频谱也相当于该方向上若干离散的$\delta$函数：$b_0 \delta(y)+ b_1 \delta(y\pm y_1)+ b_2 \delta(y\pm y_2)$…。两光栅重叠，屏函数相乘，两频谱做卷积运算，卷积的结果是二维平面上点阵分布的离散的$\delta$函数：\\
+$a_0 b_0\delta(x)\delta(y)+a_0 b_1\delta(x)\delta(y\pm y_1)+a_0 b_2\delta(x)\delta(y\pm y_2)+$…\\
+$+a_1b_0\delta(x\pm x_1)\delta(y)+a_1b_1\delta(x\pm x_1)\delta(y\pm y_1)+a_1b_2\delta(x\pm x_1)\delta(y\pm y_2)+$…\\
+$+a_2b_0\delta(x\pm x_2)\delta(y)+a_2b_1\delta(x\pm x_2)\delta(y\pm y_1)+a_2b_2\delta(x\pm x_2)\delta(y\pm y_2)+$…\\
+…
+
+当旋转光栅时，相当于$y$方向发生旋转，频谱的位置也相应旋转。
+
+\section{收获与感想}
+光学课上学习阿贝成像原理与空间滤波时觉得很有趣，有别于传统的点点对应的一次成像的观点，阿贝成像原理认为相干成像过程分两步完成：第一步是入射光经过物平面发生夫琅禾费衍射，在透镜后焦面，即频谱面上出现一系列谱斑，这是物到频谱的光学傅里叶变换；第二步是干涉，这些谱斑作为新的次波源发出球面波，相干叠加于像平面，这是频谱到像的光学傅里叶逆变换。
+
+我们于是就可以通过频谱面上进行空间滤波，进行光学信息处理。例如只保留低频谱，就能将“光”字的网格去掉，而“光”字仍清晰可见，这是用传统的几何光学手段无法做到的。显色滤波实验同样非常神奇，频谱面上特定位置的小孔滤波器提取了特定波长的空间频率成分，使得原本透明的物产生出彩色的像，这种“无中生有”也是几何光学做不到的。
+
+此外，通过本次实验，我对傅里叶变换、卷积等概念有了更深刻地体会。
+
+\end{CJK}
+\end{document}

@@ -1,0 +1,242 @@
+\documentclass[11pt]{article}
+\usepackage{CJK,latexsym,bm,float,indentfirst}
+\usepackage{graphicx}
+\setlength{\parskip}{0.5ex}
+\setlength{\textwidth}{140mm}
+\setlength{\textheight}{220mm}
+\setlength{\voffset}{-18.4mm}
+\setlength{\hoffset}{-8.4mm}
+\def \degree{^{\circ}}
+\begin{document}
+\begin{CJK}{GBK}{song}
+\begin{center}
+\Large{\CJKfamily{hei}实验十六 霍尔效应测量磁场  实验报告}\\
+\normalsize
+1400012141\\
+邵智轩\\
+周二下午3组11号\\
+2016年11月29日
+\end{center}
+\section{实验数据处理}
+\subsection{测量霍尔电压$U_H$和霍尔电流$I_H$的关系}
+为了消除副效应的影响，在操作时我们要分别改变$I_H$的方向和$B$的方向（即$I_M$的方向），记下4组电势差数据：
+
+当$I_H$正向，$B$正向时：$U_1=U_H+U_0+U_E+U_N+U_R$
+
+当$I_H$负向，$B$正向时：$U_2=-U_H-U_0-U_E+U_N+U_R$
+
+当$I_H$负向，$B$负向时：$U_3=U_H-U_0+U_E-U_N-U_R$
+
+当$I_H$正向，$B$负向时：$U_4=-U_H+U_0-U_E-U_N-U_R$
+
+考虑到$U_E<<U_H$，可忽略，于是
+$$U_H=\frac{1}{4}(U_1-U_2+U_3-U_4)$$
+
+固定励磁电流$I_M=0.600\ \textrm A$，输入霍尔电流$I_H$接入1、2端，测量3、4端电压$U_1,\ \ U_2,\ \ U_3, \ \ U_4$。
+
+\begin{table}[H]
+\caption{$I_H$接1、2端时$U_H$—$I_H$数据}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$I_H/ \textrm{mA}$&$U_1/ \textrm{mV}$&$U_2/ \textrm{mV}$&$U_3/ \textrm{mV}$&$U_4/ \textrm{mV}$&$U_H/ \textrm{mV}$\\\hline
+2.000&5.66&-5.66&5.79&-5.79&5.73\\\hline
+4.000&11.34&-11.32&11.59&-11.57&11.46\\\hline
+6.000&17.04&-16.99&17.41&-17.36&17.20\\\hline
+8.000&22.72&-22.63&23.22&-23.13&22.93\\\hline
+10.000&28.44&-28.31&29.06&-28.90&28.68\\\hline
+\end{tabular}
+\end{table}
+计算得
+$$r=0.9999997$$
+$$k=2.869\ \ \textrm{mV}/\textrm{mA}$$
+$$b=-0.01\textrm{mV}$$
+
+作图见\ \ Figure 1：
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{lab-16-figure-1.png}
+\caption{$I_H$接1、2端时$U_H$—$I_H$变化曲线}
+\end{figure}
+
+可以看出$U_H$与$I_H$满足严格的线性性。
+
+固定励磁电流$I_M=0.600\ \textrm A$，输入霍尔电流$I_H$接入3、4端，测量1、2端电压$U_1,\ \ U_2,\ \ U_3, \ \ U_4$。
+
+\begin{table}[H]
+\caption{$I_H$接3、4端时$U_H$—$I_H$数据}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$I_H/ \textrm{mA}$&$U_1/ \textrm{mV}$&$U_2/ \textrm{mV}$&$U_3/ \textrm{mV}$&$U_4/ \textrm{mV}$&$U_H/ \textrm{mV}$\\\hline
+2.00&5.80&-5.81&5.67&-5.69&5.74\\\hline
+4.00&11.59&-11.62&11.35&-11.36&11.48\\\hline
+6.00&17.38&-17.43&17.02&-17.07&17.23\\\hline
+8.00&23.16&-23.25&22.68&-22.75&22.96\\\hline
+10.00&28.97&-29.10&28.36&-28.47&28.73\\\hline
+\end{tabular}
+\end{table}
+计算得
+$$r=0.9999990$$
+$$k=2.873\ \ \textrm{mV}/\textrm{mA}$$
+$$b=-0.01\textrm{mV}$$
+
+作图见\ \ Figure 2：
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{lab-16-figure-2.png}
+\caption{$I_H$接3、4端时$U_H$—$I_H$变化曲线}
+\end{figure}
+
+可见$I_H$通入3、4端时，$U_H$与$I_H$依然满足严格的线性性，且斜率$k=K_H$几乎不变。这是当然的，公式$k=K_H B=\frac{B}{pqd}$可知，从1、2端改为3、4端时，$B,d$都不变，$K_H$理应不变。
+
+\subsection{测量$K_H$}
+霍尔电流保持$I_H=10.000mA$，霍尔电流由1、2端输入。调节励磁电流$I_M$从0—1A，每隔$0.1\textrm {mA}$分别测出磁场$B$的大小和样品的霍尔电压$U_H$。
+\begin{table}[H]
+\caption{$I_H$接1、2端时$U_H$—$B$数据}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$I_M/ \textrm{A}$&$U_1/ \textrm{mV}$&$U_2/ \textrm{mV}$&$U_3/ \textrm{mV}$&$U_4/ \textrm{mV}$&$U_H/ \textrm{mV}$&$B/ \textrm{mT}$\\\hline
+0.000&-0.13&0.29&&&-0.21&-1.1\\\hline
+0.100&4.67&-4.52&5.21&-5.06&4.87&38.9\\\hline
+0.200&9.39&-9.23&9.94&-9.80&9.59&75.5\\\hline
+0.300&14.21&-14.07&14.71&-14.55&14.39&113.3\\\hline
+0.400&18.86&-18.71&19.53&-19.37&19.12&150.9\\\hline
+0.500&23.59&-23.44&24.31&-24.14&23.87&188.0\\\hline
+0.600&28.41&-28.25&29.12&-28.96&28.69&226.3\\\hline
+0.700&33.19&-33.04&33.96&-33.80&33.50&264.2\\\hline
+0.800&38.01&-37.85&38.79&-38.64&38.32&303.5\\\hline
+0.900&42.84&-42.68&43.60&-43.45&43.14&340.0\\\hline
+1.000&47.50&-47.37&48.41&-48.27&47.89&378.2\\\hline
+\end{tabular}
+\end{table}
+
+对$U_H$—$B$进行直线拟合，作图见Figure 3：
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{lab-16-figure-3.png}
+\caption{$I_H$接1、2端时$U_H$—$B$数据}
+\end{figure}
+
+计算得
+$$r=0.999986$$
+$$k=0.1268\ \ \textrm{V}/\textrm{T}$$
+$$b=-0.02\ \ \textrm{mV}$$
+其中斜率$k$的不确定度为：
+$$\frac{\sigma_k}{k}=\sqrt{\frac{1/{r^2}-1}{n-2}}=2\times 10^ {-3}$$
+
+
+由$U_H=K_H I_H B=kB$，得
+$$K_H=\frac{k}{I_H}=12.67\ \ \textrm{V}/(\textrm{A}\cdot\textrm{T})$$
+
+VC9806—直流20\textrm{mA}档允差为$\pm(0.5\%+4$个字$)$，即
+$$e_{I_H}=10\times 0.5\%+0.004=0.054\textrm{mA}$$
+故$K_H$的相对不确定度为：
+$$\frac{\sigma_{K_H}}{K_H}=\sqrt{(\frac{\sigma_k}{k})^2+\frac{1}{3} (\frac{e_{I_H}}{I_H})^2}=3.7\times10^{-3}$$
+$$\sigma_{K_H}=3.7\times10^{-3}\cdot K_H=0.05\ \ \textrm{V}/(\textrm{A}\cdot\textrm{T})$$
+$$K_H\pm\sigma_{K_H}=12.67\pm 0.05\ \ \textrm{V}/(\textrm{A}\cdot\textrm{T})$$
+
+\subsection{测量磁化曲线}
+根据已测得的$K_H=12.68 \textrm{V}/(\textrm{A}\cdot\textrm{T})$，由$B=\frac{U_H}{K_H I_H}$可以计算出相应的$B$的大小。
+\begin{table}[H]
+\caption{各个$I_M$对应的磁场$B$}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+$I_M/ \textrm{A}$&$U_H/ \textrm{mV}$&$B/\textrm{mT}$\\\hline
+0.000&-0.21&-1.6\\\hline
+0.100&4.87&38.4\\\hline
+0.200&9.59&75.6\\\hline
+0.300&14.39&113.5\\\hline
+0.400&19.12&150.8\\\hline
+0.500&23.87&188.2\\\hline
+0.600&28.69&226.3\\\hline
+0.700&33.50&264.2\\\hline
+0.800&38.32&302.2\\\hline
+0.900&43.14&340.2\\\hline
+1.000&47.89&377.7\\\hline
+\end{tabular}
+\end{table}
+
+磁化曲线$B$—$I_M$见Figure 4：
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{lab-16-figure-4.png}
+\caption{磁化曲线$B$—$I_M$}
+\end{figure}
+
+$$r=0.99998$$
+$$k=378.2\textrm{mT}/\textrm{A}$$
+$$b=-0.4\textrm{mT}$$
+
+\subsection{测量电磁铁磁场沿水平方向分布}
+固定励磁电流$I_M=0.600\textrm{A}$，霍尔电流$I_H=10\textrm{mA}$，移动霍尔片的水平位置$x$，测量出霍尔电压$U_H$。由已知的$K_H$，计算出每个位置磁场大小$B(x)=\frac{U_H(x)}{K_H I_H}$，列表如下：
+\begin{table}[H]
+\caption{各个$I_M$对应的磁场$B$}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$x/ \textrm{mm}$&0.0&1.0&2.0&3.0&4.0&5.0&6.0&7.0&8.0&9.0\\\hline
+$U_H/ \textrm{mV}$&6.40&6.88&7.80&8.99&10.40&12.75&15.89&20.67&27.17&29.72\\\hline
+$B/\textrm{mT}$&50.5&54.3&61.5&70.9&82.0&100.6&125.3&163.0&214.3&234.4\\\hline\hline
+$x/ \textrm{mm}$&10.0&11.0&12.0&13.0&14.0&15.0&16.0&17.0&18.0&19.0\\\hline
+$U_H/ \textrm{mV}$&29.72&29.15&28.80&28.66&28.59&28.57&28.55&28.55&28.55&28.56\\\hline
+$B/\textrm{mT}$&234.4&229.9&227.1&226.0&225.5&225.3&225.2&225.2&225.2&225.2\\\hline\hline
+$x/ \textrm{mm}$&20.0&21.0&22.0&23.0&25.0&29.0&35.0&40.0&45.0&46.0\\\hline
+$U_H/ \textrm{mV}$&28.57&28.57&28.58&28.58&28.60&28.63&28.66&28.66&28.90&29.24\\\hline
+$B/\textrm{mT}$&225.3&225.3&225.4&225.4&225.6&225.8&226.0&226.0&227.9&230.6\\\hline\hline
+$x/ \textrm{mm}$&47.0&48.0&49.0&50.0&51.0\\\hline
+$U_H/ \textrm{mV}$&28.84&25.55&19.89&14.69&11.49\\\hline
+$B/\textrm{mT}$&227.4&201.5&156.9&115.9&90.62\\\hline
+\end{tabular}
+\end{table}
+
+由于$x$较大的一端已经转到顶，故曲线右半部份不够完整。$B$—$x$曲线见Figure 5：
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{lab-16-figure-5.png}
+\caption{电磁铁磁场$B$沿水平方向$x$的分布}
+\end{figure}
+
+从图中可以看出，电磁铁中间的磁场曲线近似水平，即电磁铁两极之间近似为匀强磁场，而当位移达到匀强磁场的边界外后，磁场迅速减弱。
+
+\section{思考题}
+\subsection{分析本实验主要误差来源，计算磁场$B$的合成不确定度（分别取$I_M=1.0\textrm{A}, \ \ I_H=10\textrm{mA}$）。}
+本实验主要误差来源有：用数字万用表测量励磁电流$I_M$、霍尔电流$I_H$、霍尔电压$U_H$的误差，特斯拉计测量磁场的误差（间接造成了$K_H$的误差）
+
+$$B=\frac{U_H}{K_H I_H}$$
+
+之前已计算得，
+$$\sigma_{K_H}=3.7\times10^{-3}\cdot K_H=0.05\ \ \textrm{V}/(\textrm{A}\cdot\textrm{T})$$
+又VC9806—直流20\textrm{mA}档允差为$\pm(0.5\%+4$个字$)$，且$I_H=10.000\textrm{mA}$，即
+$$e_{I_H}=10\times 0.5\%+0.004=0.054\textrm{mA}$$
+VC9806—直流200\textrm{mV}档允差为$\pm(0.05\%+3$个字$)$，且$U_H=47.89\textrm{mA}$，即
+$$e_{U_H}=48\times 0.05\%+0.03=0.054\textrm{mV}$$
+所以
+$$\frac{\sigma_B}{B}=\sqrt{\frac{1}{3}(\frac{e_{U_H}}{U_H})^2+\frac{1}{3} (\frac{e_{I_H}}{I_H})^2+ (\frac{\sigma_{K_H}}{K_H})^2}=3.7\times10^{-3}=0.49\%$$
+$$\sigma_B=340\times 0.49\%=2\textrm{mT}$$
+
+\subsection{以简图示意，用霍尔效应法判断霍尔片上磁场方向。}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1.0]{lab-16-figure-6.jpg}
+\caption{霍尔效应判断磁场方向}
+\end{figure}
+如图Figure 6，图上半部分是n型半导体，载流子为电子。实验可测出霍尔电压$U_{AA'}>0$，电场$\vec E$方向朝下，电子受力$\vec f_E$向上。由平衡条件可知，电子受洛伦兹力$\vec f_B$方向向下。又根据霍尔电流$I_H$方向向右可得电子漂移运动$\vec v$方向向左。由$\vec f_B=-e(\vec v \times \vec B)$可知$B$的方向为$-(\vec f_B \times \vec v)$的方向，在此图中为垂直纸面向外。
+
+下半部分为p型半导体，载流子为带正电的空穴。可类似地判断出磁场方向仍是垂直纸面向外。
+
+\subsection{在测量$B$—$I_M$曲线中，$I_M=0$时$U_H$测量端仍有较小的电压，这是为什么？}
+一方面电磁铁芯产生的磁场与磁化历史有关，可能会有剩磁。另一方面，此时还有不等位电势差（可以通过霍尔电流换向消除）和残留的温差电动势（此时无法消除）。
+
+\section{分析与讨论}
+\subsection{比较实验内容1中a、b两种接法的结果，并解释现象。}
+比较两种接法下的数据和$U_H$—$I_H$关系图，两者数据非常接近。在允许误差范围内，拟合出的两直线斜率相等。
+这是当然的，直线斜率$k=K_H B=\frac{B}{pqd}$，从1、2端改为3、4端时，$\vec B,d$都不变，$K_H$理应不变。
+
+\subsection{说明实验内容3中为什么用计算出的$B$作磁化曲线比用直接测量的$B$更好。}
+ 我们直接测量的磁场大小是用特斯拉计测量得到的。用特斯拉计测量磁场时，很难使$\vec B$完全垂直于探头（探头其实也是一个霍尔片），测到的是磁场的一个分量。实验要求在转动探头时记录示数的最大值，依然难以保证测得磁场的真实大小。而我们利用已经校准过的霍尔片，其$K_H$为已测得的常量，$I_H$保持不变，霍尔电压$U_H$是可以准确测得的，从而利用公式$B=\frac{U_H}{K_H I_H}$计算出的$B$是准确的。本质上就是转化成$U_H$—$I_H$的关系，所以即使$K_H$值测得不够准确，也不会影响磁化曲线的形状、线性度等，不会影响研究电磁铁的磁化规律。
+ 
+\end{CJK}
+\end{document}

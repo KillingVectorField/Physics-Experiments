@@ -1,0 +1,110 @@
+\documentclass[11pt]{article}
+\usepackage{CJK,latexsym,bm,float,indentfirst}
+\usepackage{graphicx, longtable}
+\setlength{\parskip}{0.5ex}
+\setlength{\textwidth}{140mm}
+\setlength{\textheight}{220mm}
+\setlength{\voffset}{-18.4mm}
+\setlength{\hoffset}{-18.4mm}
+\def \degree{^{\circ}}
+\begin{document}
+\begin{CJK}{GBK}{song}
+\begin{center}
+\Large{\CJKfamily{hei}实验十四  直流电桥测量电阻 实验报告}\\
+\normalsize
+1400012141\\
+邵智轩\\
+周二下午3组11号\\
+2017年3月7日
+\end{center}
+\section{数据处理}
+\subsection{平衡电桥测$R_x$及电桥的灵敏度$S$}
+$E=4.0\textrm V$
+\begin{table}[H]
+\centering
+\caption{测$R_x$及电桥的灵敏度$S$}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$R_x$&$R_1(\Omega) / R_2(\Omega)$&$R_0( \Omega)$&$R'_0 ( \Omega)$&$\Delta n$(格)&$R_x( \Omega)$&$\Delta R_0(\Omega)$&$S$(格)\\\hline
+$R_{x1}$&$500/500.5$&48.0&47.8&5.8&48.0&0.2&$1.4\times 10^3$\\\hline
+$R_{x2}$&$50/500$&3602.2&3632.2&4.2&360.2&30.0&$5.0\times 10^2$\\\hline
+$R_{x2}$&$500/500$&360.5&361.5&3.8&360.5&1.0&$1.4\times 10^3$\\\hline
+$R_{x2}$&$500/500$&360.5&361.5&3.8&360.5&1.0&$1.4\times 10^3$\\\hline
+$R_{x3}$&$500/500$&4055.0&4125.0&4.4&4055&70.0&$2.6\times 10^2$\\\hline
+\end{tabular}
+\end{table}
+其中第三和第四组是用交换桥臂法测量$R_{x2}$（$R_1$和$R_2$交换）
+$$R_x=\sqrt{R_{01}\cdot R_{02}}=360.5\Omega$$
+$$\frac{\sigma_{R_x}}{R_x}=\sqrt{(\frac1 2 \frac{\sigma_{R_{01}}}{R_{01}})^2+(\frac1 2 \frac{\sigma_{R_{02}}}{R_{02}})^2}=\frac{ 1} {2\sqrt3} \frac{ e_{R_0}}{R_0}$$
+因为$R_{01}= R_{02}=R_0$，且$\sigma_{R_{01}}=\sigma_{R_{02}}=\sigma_{R_{0}}=\frac1 {\sqrt3} e_{R_0}$
+$$\frac{\sigma_{R_x}}{R_x}=\frac{ 1} {2\sqrt3} \frac{ e_{R_0}}{R_0}=\frac1 {2\sqrt3}\times 0.1\%=0.03\%$$
+考虑电桥灵敏度
+$$\frac{\delta R_x}{R_x}=\frac{0.2\Delta R_0}{\Delta n \cdot R_0}=0.015\%$$
+综合$R_0$的不确定度和电桥灵敏域$\delta R_x$两个因素，得
+$$\frac{\sigma_{R_x}}{R_x}=\sqrt{0.0003^2+0.00015^2}=0.03\%$$
+$$\sigma_{R_x}=360\times 0.03\%=0.1\Omega$$
+$$R_{x2}\pm\sigma_{R_x}=(360.5\pm0.1)\Omega$$
+\subsection{其余各组电阻值的不确定度}
+对于第一行的$R_{x1}$，电桥灵敏度$S$足够高，其贡献的误差可略。
+
+$$\frac{\sigma_{R_{x1}}}{R_{x1}}=\sqrt{(\frac{\sigma_{R_{1}}}{R_{1}})^2+( \frac{\sigma_{R_{2}}}{R_{2}})^2+(\frac{\sigma_{R_{0}}}{R_{0}})^2}$$
+$$\frac{\sigma_{R_{1}}}{R_{1}}=\frac{\sigma_{R_{2}}}{R_{2}}=0.1\%,\ \ \frac{\sigma_{R_{0}}}{R_{0}}=\frac{40\times0.1\%+8\times0.5\%}{48}=0.2\%$$
+$$\frac{\sigma_{R_{x1}}}{R_{x1}}=\sqrt{0.001^2+0.001^2+0.002^2}=0.002$$
+
+$$\sigma_{R_{x1}}=0.002\times 48=0.1\Omega$$
+$$R_{x1}\pm\sigma_{R_{x1}}=(48.0\pm0.1)\Omega$$
+
+对于第二行的$R_{x2}$，电桥灵敏度的贡献：$\frac{\delta R_x}{R_x}=\frac{0.2\Delta R_0}{\Delta n \cdot R_0}=0.04\%$，可略。
+
+$$\frac{\sigma_{R_{1}}}{R_{1}}=\frac{\sigma_{R_{2}}}{R_{2}}=\frac{\sigma_{R_{0}}}{R_{0}}=0.1\%$$
+$$\frac{\sigma_{R_{x2}}}{R_{x2}}=\sqrt{0.001^2+0.001^2+0.001^2}=0.002$$
+$$\sigma_{R_{x1}}=0.002\times 360=0.7\Omega$$
+$$R_{x2}\pm\sigma_{R_{x2}}=(360.2\pm0.7)\Omega$$
+
+对于最后一行的$R_{x3}$，电桥灵敏度的贡献：$\frac{\delta R_x}{R_x}=\frac{0.2\Delta R_0}{\Delta n \cdot R_0}=0.08\%$，可略。
+
+$$\frac{\sigma_{R_{1}}}{R_{1}}=\frac{\sigma_{R_{2}}}{R_{2}}=\frac{\sigma_{R_{0}}}{R_{0}}=0.1\%$$
+
+$$\frac{\sigma_{R_{x3}}}{R_{x3}}=\sqrt{0.001^2+0.001^2+0.001^2}=0.002$$
+$$\sigma_{R_{x3}}=0.002\times 4000=8\Omega$$
+$$R_{x3}\pm\sigma_{R_{x3}}=(4055\pm8)\Omega$$
+\subsection{电路参数对电桥灵敏度$S$的影响}
+$R_x$取$R_{x2}$。
+\begin{table}[H]
+\centering
+\caption{电路参数对电桥灵敏度$S$的影响}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+条件&$R_0( \Omega)$&$R'_0 ( \Omega)$&$\Delta n$(格)&$R_x( \Omega)$&$\Delta R_0(\Omega)$&$S$(格)\\\hline
+$E=4.0\textrm V,\ \ R_1/R_2=500/500,\ \ R_h=0$&360.5&361.5&3.8&360.5&1.0&$1.4\times10^3$\\\hline
+$\textbf{E=2.0\textrm V},\ \ R_1/R_2=500/500,\ \ R_h=0$&360.5&362.7&4.0&360.5&2.2&$6.6\times10^2$\\\hline
+$E=4.0\textrm V,\ \ R_1/R_2=500/\textbf{5000},\ \ R_h=0$&3605.0&3661.0&4.0&360.5&56.0&$2.6\times10^2$\\\hline
+$E=4.0\textrm V,\ \ R_1/R_2=500/500,\ \ R_h=3\Omega$&360.5&368.7&4.0&360.5&8.2&$1.8\times10^2 $\\\hline
+\end{tabular}
+\end{table}
+\section{思考题}
+下列因素是否会加大测量误差？
+
+①电源电压大幅下降：会，电桥灵敏度$S$下降，灵敏域$\delta R_x$增大。
+
+②电源电压稍有波动：不会。平衡电桥法对电源稳定度要求不高。
+
+③在测量较低电阻时，导线电阻不可忽略：会。导线电阻已相当于，甚至大于待测电阻的不确定度，所以此时不确定度合成时需要加入导线电阻的贡献。
+
+④检流计零点没有校准：会。测量中检流计显示零时，实际电流不为零，电桥未达到平衡。
+
+⑤检流计灵敏度不高：会。会使得电桥灵敏度$S$不高，电桥灵敏域$\delta R_x$增大。
+
+\section{分析与讨论}
+通过1.2节的计算可以发现，当电桥灵敏度足够高时，其对误差的贡献可忽略，$R_{x}$的不确定度主要来源于$R_1$、$R_2$、$R_0$，主要取决于其中阻值最小的电阻的相对不确定度。
+
+\section{收获与感想}
+学习了直流平衡电桥测量电阻的方法。相比以往的伏安法测电阻，平衡电桥法对电源稳定性、电表精确性的要求不高，只要检流计足够灵敏，被测电阻$R_x$就可以达到同其他桥臂上的标准电阻同样的精度。
+
+体会了电路中不同参数变化对电桥灵敏度的影响，与电桥灵敏度公式相吻合。
+
+
+
+
+\end{CJK}
+\end{document}

@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+\usepackage{CJK,latexsym,bm,float,indentfirst}
+\usepackage{graphicx, longtable}
+\setlength{\parskip}{0.5ex}
+\setlength{\textwidth}{140mm}
+\setlength{\textheight}{220mm}
+\setlength{\voffset}{-18.4mm}
+\setlength{\hoffset}{-8.4mm}
+\def \degree{^{\circ}}
+\begin{document}
+\begin{CJK}{GBK}{song}
+\begin{center}
+\Large{\CJKfamily{hei}实验八 测定金属的杨氏模量  实验报告}\\
+\normalsize
+1400012141\\
+邵智轩\\
+周二下午3组11号\\
+2017年2月28日
+\end{center}
+\section{实验原理}
+$$E=\frac{FL}{S\delta L}=\frac{4mgL}{\pi d^2 \delta L}$$
+
+$E$为金属的杨氏模量，反映材料的弹性性质，单位为Pa。
+
+实验中带测量的4个物理量分别为$m$、$L$、$d$、$\delta L$。由不确定度合成公式得：
+$$\frac{\sigma_E}{E}=\sqrt{(\frac{\sigma_m}{m})^2+(\frac{\sigma_L}{L})^2+(2 \frac{\sigma_d}{d})^2+(\frac{\sigma_{\delta L}}{\delta L})^2}$$
+
+估算各项对总的不确定度的贡献：
+
+$$\frac{e_m}{m}=\frac{1\textrm{g}}{200\textrm{g}}=0.5\%$$
+$$\frac{e_L}{L}=\frac{0.5\textrm{cm}}{80\textrm{cm}}=0.6\%$$
+$$2 \frac{e_d}{d}=2\times \frac{0.004\textrm{mm}}{0.3\textrm{mm}}=3\%$$
+$$\frac{e_{\delta L}}{\delta L}=\frac{0.02\textrm{mm}}{1\textrm{mm}}=2\%$$
+
+由此可知，$d$和$\delta L$的测量是实验的关键，精度要求较高，而$m$和$L$的测量对误差的贡献很小。由于每个砝码质量与$200\textrm g$只差不大于$1\textrm g$，故无需逐个测量，直接都按$200\textrm g$计算也是合理的。金属丝$L$的测量也无需特别精确，$0.5\textrm {cm}$以内的偏差都是可以接受的。
+\section{数据处理}
+\subsection{$\delta L$的测量及其不确定度}
+
+\end{CJK}
+\end{document}

@@ -1,0 +1,61 @@
+\documentclass[10pt]{article}
+\usepackage{CJK,latexsym,bm}
+\setlength{\parskip}{0.5ex}
+\setlength{\textwidth}{140mm}
+\setlength{\textheight}{250mm}
+\setlength{\voffset}{-18.4mm}
+\setlength{\hoffset}{-8.4mm}
+\begin{document}
+\begin{CJK}{GBK}{song}
+\begin{center}
+\Large{\CJKfamily{hei}实验一 测定冰的熔化热}\\
+\normalsize
+1400012141\\
+邵智轩\\
+周二下午3组\\
+2016年9月20日
+\end{center}
+
+\noindent {\large \CJKfamily{hei}一 数据及处理}
+\begin{center}
+表一 各直接和间接测量物理量的质量\\
+\begin{tabular}{|c|c|}
+\hline
+
+\end{tabular}
+\end{center}
+
+\noindent \textbf{2　李萨如图形}
+
+观测李萨如图形需要把某一通道改换由其他同学的发生器提供的正弦波信号，并把水平显示方式切换成“X-Y显示”。由于时间有限，未在课上调制出李萨如图形，但是我通过普物实验教学中心上的视频观察了这一现象。
+
+\noindent {\large \CJKfamily{hei}二 实验数据和现象的分析、处理和结论}
+
+\noindent \textbf{1　测量仪器最小分度与测量结果有效数字的关系}
+
+最小分度由示波器屏幕上读出的$t_0$和$K$决定。由于每一格又分为5小格，则最小分度分别为$t_0/5$和$K/5$。如$t_0=2ms$时，最小分度为$0.4ms$，读数据时读到小数点后一位即可。又如$t_0=50\mu s$时，最小分度为$10\mu s$，读数据时读到整数位即可。
+
+做乘除运算时让运算结果的有效数字位与有效数字位数最少的数相同。如本实验在$100Hz$时测得的$T=9.8ms$，由于第一位是9，接近于10.0，故可视作3位有效数字，$f=\frac 1T=102Hz$也保留3位有效数字。又如本实验在$100Hz$时测得的$u_{pp}=21.0V$，为3位有效数字，$u_e=\frac{u_{pp}}{2\sqrt2}=7.42V$也保留3位有效数字。
+
+\noindent \textbf{2　根据李萨如图形确定两信号的频率比及相位关系}
+
+不妨设X和Y两个正弦波信号分别为$x=x_0sin(nt+\phi_1)$和$y=y_0sin(mt+\phi_2)$。
+
+\noindent 频率比：
+
+求图形与某一水平线交点：$y=y_0sin(mt+\phi_2)=y_1$。得$t=\frac1m (arcsin\frac{y_1}{y_0}-\phi_2)+\frac{2k}{m}\pi$，或$t=\frac1m (\pi-arcsin\frac{y_1}{y_0}-\phi_2)+\frac{2k}{m}\pi$，对应2m个不同的x，即与该水平线有2m个交点。同理该图形与某一垂直线有2n个交点。故有如下结论：
+$$f_Y:f_X=m:n$$
+m为水平线与图形的交点个数，n为垂直线与图形的交点个数。
+
+\noindent 相位关系：
+
+若频率相等，$m=n=1$,，则相位差恒定，图像为直线或椭圆。不妨取$\phi_2=0$，记$\phi_1=\Delta \phi$。图形在X轴的截距为$x=\pm x_0sin\Delta \phi$，得$\Delta \phi=\pm arcsin \frac{x}{x_0}$。
+
+若频率不等，相位差不恒定。$f_Y:f_X=m:n$，$x=x_0sin(nt+\Delta \phi)$，$y=y_0sinmt$，当$m:n$为简单整数比，且$\Delta \phi$恒定时，能看到稳定的李萨如图形。容易证明，当$\Delta \phi$增减$\frac{k\pi}{m}$时，图形不变。则可取图形与X轴的一个交点$x_1$，有$x_1=x_0sin(\Delta \phi+\frac{k\pi}{m})$，得$\Delta \phi=arcsin\frac{x_1}{x_0}-\frac{k\pi}{m}, k=1,2,...,2m$。
+
+\noindent {\large \CJKfamily{hei}三 实验收获}
+
+学习了模拟示波器的原理和使用。理解了电偏转、触发扫描同步、内触发等原理。体会到了选择合适的触发电平对于调出稳定波形非常重要。了解、并实践了示波器上绝大多数的键钮、功能，能比较熟练的使用模拟示波器。
+
+\end{CJK}
+\end{document}

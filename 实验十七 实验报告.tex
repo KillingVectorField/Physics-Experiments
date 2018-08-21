@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+\usepackage{CJK,latexsym,bm,float}
+\usepackage{graphicx}
+\setlength{\parskip}{0.5ex}
+\setlength{\textwidth}{140mm}
+\setlength{\textheight}{220mm}
+\setlength{\voffset}{-18.4mm}
+\setlength{\hoffset}{-8.4mm}
+\def \degree{^{\circ}}
+\begin{document}
+\begin{CJK}{GBK}{song}
+\begin{center}
+\Large{\CJKfamily{hei}实验二十 光衍射的定量研究  实验报告}\\
+\normalsize
+1400012141\\
+邵智轩\\
+周二下午3组11号\\
+2016年11月15日
+\end{center}
+\section{数据处理}
+\subsection{单缝夫琅禾费衍射}
+激光波长：$\lambda=632.8\textrm {nm}$
+
+缝宽参考值：$a_0=175\mu \textrm {m}$
+\begin{table}[H]
+\caption{单缝夫琅禾费衍射}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+&主极强$I_0$&左次极强$I_1$&右次极强$I_2$\\\hline
+光强$I$&3113&153&167\\\hline
+位置$x/\textrm {mm}$&8.270&4.045&12.430\\\hline
+\end{tabular}
+\end{table}
+图像对称性要求：$\frac{2|I_1-I_2|}{I_1+I_2}\leq10\%$
+
+图像可视性要求：$4.0\%\leq\frac{I_1+I_2}{2I_0}\leq5.5\%$
+
+代入所测数据，求得：
+$$\frac{2|I_1-I_2|}{I_1+I_2}=8.8\%$$
+$$\frac{I_1+I_2}{2I_0}=5.1\%$$
+
+由单缝夫琅禾费衍射公式：
+$$I=I_0(\frac{\sin \alpha}{\alpha})^2, \alpha=\frac{\pi a \sin{\theta}}{\lambda}$$
+当$\alpha=1.43\pi$时，光强出现次极大。则在傍轴条件下有
+$$a=\frac{1.43\lambda}{\sin \theta}=\frac{1.43\lambda z}{\Delta x}$$
+其中$z$为衍射屏与像平面的距离，$\Delta x$为主极大与次极大之间的距离。
+
+实验测得：
+$$z=95.0-15.5+0.4=79.9\textrm{cm}, \Delta x=\frac{x_2-x_1}{2}=4.193\textrm{mm}$$
+代入，得$a=\frac{1.43\lambda z}{\Delta x}=\frac{1.43\times632.8\textrm{nm}\times79.9\textrm{cm}}{4.193\textrm{mm}}=172.4\mu\textrm{m}$
+
+\subsection{多缝夫琅禾费衍射（五缝）}
+注：实验本要求测量三缝夫琅禾费衍射的缝宽和缝间距，而我一开始没看清要求，做了五缝。好在五缝与三缝可类似地计算缝宽和缝间距，并观察多缝衍射的特征，所以私以为并无大碍。
+\end{CJK}
+\end{document}

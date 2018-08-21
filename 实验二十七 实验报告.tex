@@ -1,0 +1,199 @@
+\documentclass[11pt]{article}
+\usepackage{CJK,latexsym,bm,float,indentfirst}
+\usepackage{graphicx, longtable}
+\setlength{\parskip}{0.5ex}
+\setlength{\textwidth}{140mm}
+\setlength{\textheight}{220mm}
+\setlength{\voffset}{-18.4mm}
+\setlength{\hoffset}{-8.4mm}
+\def \degree{^{\circ}}
+\begin{document}
+\begin{CJK}{GBK}{song}
+\begin{center}
+\Large{\CJKfamily{hei}实验二十七 交流电桥  实验报告}\\
+\normalsize
+1400012141\\
+邵智轩\\
+周二下午3组11号\\
+2017年3月28日
+\end{center}
+\section{数据处理}
+电容、电感盒用的是12号，磁环用的是8号。
+\subsection{电容桥}
+$f=1.000\textrm{kHz}$，$E=4.01\textrm V$，$\frac{e_f}{f}=0.1\%$
+\subsubsection{纸质电容（$0.2\mu \textrm F$）}
+$R_1=R_2=800.0\Omega$，$R_0=2.8\Omega$，$C_0=0.2188\mu \textrm F$，最终$\Delta U=0.13\textrm{mV}$。
+$$\frac{e_{R_1}}{R_1}=\frac{e_{R_2}}{R_2}=0.1\%$$
+$$\frac{e_{R_0}}{R_0}=\frac{2\times0.5\%+0.8\times2\%}{2.8}=0.9\%$$
+$$\frac{e_{C_0}}{C_0}=\frac{0.2\times0.5\%+0.01\times0.65\%+0.008\times2\%+0.0008\times5\%}{0.2188}=0.6\%$$
+
+计算电容$C_x$：
+$$C_x=\frac{R_2}{R_1}C_0=0.2188\mu \textrm F$$
+$$\sigma_{C_x}=\frac{C_x}{\sqrt3}\sqrt{(\frac{e_{R_1}}{R_1})^2+(\frac{e_{R_2}}{R_2})^2+(\frac{e_{C_0}}{C_0})^2}=\frac{0.22}{\sqrt3}\times0.6\%=0.0008\mu \textrm F$$
+$$C_x\pm\sigma_{C_x}=(0.2188\pm0.0008)\mu \textrm F$$
+
+计算损耗电阻$R_C$：
+$$R_C=\frac{R_1}{R_2}R_0=2.8\Omega$$
+$$\sigma_{R_C}=\frac{R_C}{\sqrt3}\sqrt{(\frac{e_{R_1}}{R_1})^2+(\frac{e_{R_2}}{R_2})^2+(\frac{e_{R_0}}{R_0})^2}=\frac{2.8}{\sqrt3}\times0.9\%=0.02\Omega$$
+$$R_C\pm\sigma_{R_C}=(2.80\pm0.02)\Omega$$
+
+计算损耗角$\tan{\delta}$：
+$$\tan{\delta}=2 \pi R_0 C_0 f=3.85\times10^{-3}$$
+$$\sigma_{\tan{\delta}}=\frac{\tan{\delta}}{\sqrt3}\sqrt{(\frac{e_{R_0}}{R_0})^2+(\frac{e_{C_0}}{C_0})^2+(\frac{e_f}{f})^2}=\frac{3.9\times10^{-3}}{\sqrt3}\times1\%=0.02\times10^{-3}$$
+$$\tan{\delta}\pm\sigma_{\tan{\delta}}=(3.85\pm0.02)\times10^{-3}$$
+
+\subsubsection{电解电容（$6.8\mu \textrm F$）}
+$R_1=100.0\Omega$，$R_2=1000.0\Omega$，$R_0=34.3\Omega$，$C_0=0.6698\mu \textrm F$，最终$\Delta U=0.00\textrm{mV}$。
+$$\frac{e_{R_1}}{R_1}=\frac{e_{R_2}}{R_2}=0.1\%$$
+$$\frac{e_{R_0}}{R_0}=\frac{30\times0.1\%+4\times0.5\%+0.3\times2\%}{34.3}=0.2\%$$
+$$\frac{e_{C_0}}{C_0}=\frac{0.6\times0.5\%+0.06\times0.65\%+0.009\times2\%+0.0008\times5\%}{0.6698}=0.5\%$$
+
+计算电容$C_x$：
+$$C_x=\frac{R_2}{R_1}C_0=6.698\mu \textrm F$$
+$$\sigma_{C_x}=\frac{C_x}{\sqrt3}\sqrt{(\frac{e_{R_1}}{R_1})^2+(\frac{e_{R_2}}{R_2})^2+(\frac{e_{C_0}}{C_0})^2}=\frac{6.7}{\sqrt3}\times0.5\%=0.02\mu \textrm F$$
+$$C_x\pm\sigma_{C_x}=(6.70\pm0.02)\mu \textrm F$$
+
+计算损耗电阻$R_C$：
+$$R_C=\frac{R_1}{R_2}R_0=3.43\Omega$$
+$$\sigma_{R_C}=\frac{R_C}{\sqrt3}\sqrt{(\frac{e_{R_1}}{R_1})^2+(\frac{e_{R_2}}{R_2})^2+(\frac{e_{R_0}}{R_0})^2}=\frac{3.4}{\sqrt3}\times0.2\%=0.005\Omega$$
+$$R_C\pm\sigma_{R_C}=(3.430\pm0.005)\Omega$$
+
+计算损耗角$\tan{\delta}$：
+$$\tan{\delta}=2 \pi R_0 C_0 f=0.1444$$
+$$\sigma_{\tan{\delta}}=\frac{\tan{\delta}}{\sqrt3}\sqrt{(\frac{e_{R_0}}{R_0})^2+(\frac{e_{C_0}}{C_0})^2+(\frac{e_f}{f})^2}=\frac{0.14}{\sqrt3}\times0.5\%=0.0004$$
+$$\tan{\delta}\pm\sigma_{\tan{\delta}}=0.1444\pm0.0004$$
+
+\subsection{麦克斯韦—维恩桥测空心电感（$L=6\textrm{mH}$，$R_L=20\Omega$）}
+$R_1=R_2=200.0\Omega$，$R_0=1916.6\Omega$，$C_0=0.1500\mu\textrm F$，最终$\Delta U=0.11\textrm{mV}$。
+$$\frac{e_{R_1}}{R_1}=\frac{e_{R_2}}{R_2}=\frac{e_{R_0}}{R_0}=0.1\%$$
+$$\frac{e_{C_0}}{C_0}=\frac{0.1\times0.5\%+0.05\times0.65\%}{0.15}=0.6\%$$
+
+计算电感$L_x$：
+$$L_x=C_0 R_1 R_2=6.00\textrm{mH}$$
+$$\sigma_{L_x}=\frac{L_x}{\sqrt3}\sqrt{(\frac{e_{R_1}}{R_1})^2+(\frac{e_{R_2}}{R_2})^2+(\frac{e_{C_0}}{C_0})^2}=\frac{6}{\sqrt3}\times0.6\%=0.02\textrm{mH}$$
+$$L_x\pm\sigma_{L_x}=(6.00\pm0.02)\textrm{mH}$$
+
+计算损耗电阻$R_L$：
+$$R_L=\frac{R_1 R_2}{R_0}=20.87\Omega$$
+$$\sigma_{R_L}=\frac{R_L}{\sqrt3}\sqrt{(\frac{e_{R_1}}{R_1})^2+(\frac{e_{R_2}}{R_2})^2+(\frac{e_{R_0}}{R_0})^2}=\frac{21}{\sqrt3}\times0.2\%=0.02\Omega$$
+$$R_L\pm\sigma_{R_L}=(20.87\pm0.02)\Omega$$
+
+计算$Q$值：
+$$Q=2 \pi R_0 C_0 f=1.806$$
+$$\sigma_Q=\frac{Q}{\sqrt3}\sqrt{(\frac{e_{R_0}}{R_0})^2+(\frac{e_{C_0}}{C_0})^2+(\frac{e_f}{f})^2}=\frac{1.8}{\sqrt3}\times0.6\%=0.006$$
+$$Q\pm\sigma_Q=1.806\pm0.006$$
+
+\subsection{麦克斯韦桥测空心电感（$L=6\textrm{mH}$，$R_L=20\Omega$）}
+$R_1=500.0\Omega$，$R_0=16.3\Omega$，$R_2=500.0\Omega$，$L_0=6.0\textrm{mH}$，$R_{L_0}=4.48\Omega$，最终$\Delta U=0.41\textrm{mV}$。
+$$\frac{e_{R_1}}{R_1}=\frac{e_{R_2}}{R_2}=0.1\%$$
+$$\frac{e_{R_0}}{R_0}=\frac{10\times0.1\%+6\times0.5\%+0.3\times2\%}{16.3}=0.3\%$$
+$$\frac{e_{L_0}}{L_0}=2\%$$
+$$\frac{e_{R_{L_0}}}{R_{L_0}}=\frac{0.01}{4.48}=0.2\%$$
+
+计算电感$L_x$：
+$$L_x=\frac{R_1 }{R_2}L_0=6.00\textrm{mH}$$
+$$\sigma_{L_x}=\frac{L_x}{\sqrt3}\sqrt{(\frac{e_{R_1}}{R_1})^2+(\frac{e_{R_2}}{R_2})^2+(\frac{e_{L_0}}{L_0})^2}=\frac{6}{\sqrt3}\times2\%=0.07\textrm{mH}$$
+$$L_x\pm\sigma_{L_x}=(6.00\pm0.07)\textrm{mH}$$
+
+计算损耗电阻$R_L$：
+$$R_L=\frac{R_1 }{R_2}(R_0+R_{L_0})=20.78\Omega$$
+$$\sigma_{R_L}=\frac{R_L}{\sqrt3}\sqrt{(\frac{e_{R_1}}{R_1})^2+(\frac{e_{R_2}}{R_2})^2+\frac{e_{R_0}^2+e_{R_{L_0}}^2}{(R_0+R_{L_0})^2}}=\frac{21}{\sqrt3}\times0.3\%=0.04\Omega$$
+$$R_L\pm\sigma_{R_L}=(20.78\pm0.04)\Omega$$
+
+计算$Q$值：
+$$Q=2 \pi  f \frac{L_0}{R_0+R_{L_0}}=1.81$$
+$$\sigma_Q=\frac{Q}{\sqrt3}\sqrt{\frac{e_{R_0}^2+e_{R_{L_0}}^2}{(R_0+R_{L_0})^2}+(\frac{e_{L_0}}{L_0})^2+(\frac{e_f}{f})^2}=\frac{1.8}{\sqrt3}\times2\%=0.02$$
+$$Q\pm\sigma_Q=1.81\pm0.02$$
+
+\subsection{比较麦克斯韦—维恩桥和麦克斯韦桥的收敛性（含思考题（2））}
+麦克斯韦—维恩桥四个臂的阻抗分别为：$\tilde{Z_1}=R_1$，$\tilde{Z_2}=\frac{R_0}{1+j\omega C_0 R_0}$，$\tilde{Z_3}=R_L+j\omega L_x$，$\tilde{Z_4}=R_2$。
+
+电桥平衡时，有
+$$\frac{\tilde{Z_1}}{\tilde{Z_2}}=\frac{\tilde{Z_3}}{\tilde{Z_4}}$$
+$$(R_L+j\omega L_x)-(\frac{R_1 R_2}{R_0}+j\omega C_0 R_1 R_2)=0$$
+记复数$\textbf A=R_L+j\omega L_x$，$\textbf B=\frac{R_1 R_2}{R_0}+j\omega C_0 R_1 R_2$，则$\textbf A$是一个常数。调节$R_0$可改变$\textbf B$的实部，调节$C_0$可改变$\textbf B$的虚部。
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.1]{lab-27-figure-1.jpg}
+\caption{麦克斯韦—维恩桥和麦克斯韦桥达到平衡的过程图}
+\end{figure}
+所以理论上，麦克斯韦—维恩桥由于$C_0$和$R_0$是独立的，只需要两步即可调平衡（如左图）；而麦克斯韦桥一般情况下需要很多步逐步趋近平衡点（如右图）。
+
+本次实验中，由于我的待测电感值恰好为$6.00\textrm{mH}$，与电感箱$L_0$的值正好相等，也即初始点$\textbf A$与$\textbf B$的虚部相等，所以我只调了一次$R_0$（$\textbf B$的实部）就直接使电桥趋于平衡。但理论上讲，麦克斯韦桥的收敛性是较差的。
+
+\subsection{麦克斯韦—维恩桥测量标准互感器的互感值}
+顺接时，$L$顺$=L_1+L_2+2M$；反接时，$L$反$=L_1+L_2-2M$。所以$M=\frac 1 4 (L$顺$-L$反$)$。
+\subsubsection{顺接}
+$R_1=R_2=640.0\Omega$，$R_0=3175.5\Omega$，$C_0=0.6155\mu\textrm F$，最终$\Delta U=0.16\textrm{mV}$。
+$$\frac{e_{R_1}}{R_1}=\frac{e_{R_2}}{R_2}=\frac{e_{R_0}}{R_0}=0.1\%$$
+$$\frac{e_{C_0}}{C_0}=\frac{0.6\times0.5\%+0.01\times0.65\%+0.005\times2\%+0.0005\times5\%}{0.62}=0.5\%$$
+
+计算电感$L_x1$（顺接）：
+$$L_x1=C_0 R_1 R_2=0.252\textrm{H}$$
+$$\sigma_{L_x1}=\frac{L_x1}{\sqrt3}\sqrt{(\frac{e_{R_1}}{R_1})^2+(\frac{e_{R_2}}{R_2})^2+(\frac{e_{C_0}}{C_0})^2}=\frac{0.62}{\sqrt3}\times0.5\%=0.002\textrm{H}$$
+$$L_x1\pm\sigma_{L_x1}=(0.252\pm0.002)\textrm{H}$$
+
+\subsubsection{反接}
+$R_1=R_2=300.0\Omega$，$R_0=786.8\Omega$，$C_0=0.5895\mu\textrm F$，最终$\Delta U=0.02\textrm{mV}$。
+$$\frac{e_{R_1}}{R_1}=\frac{e_{R_2}}{R_2}=\frac{e_{R_0}}{R_0}=0.1\%$$
+$$\frac{e_{C_0}}{C_0}=\frac{0.5\times0.5\%+0.08\times0.65\%+0.009\times2\%+0.0005\times5\%}{0.59}=0.5\%$$
+
+计算电感$L_x2$（反接）：
+$$L_x2=C_0 R_1 R_2=0.0531\textrm{H}$$
+$$\sigma_{L_x2}=\frac{L_x2}{\sqrt3}\sqrt{(\frac{e_{R_1}}{R_1})^2+(\frac{e_{R_2}}{R_2})^2+(\frac{e_{C_0}}{C_0})^2}=\frac{0.053}{\sqrt3}\times0.5\%=0.0002\textrm{H}$$
+$$L_x2\pm\sigma_{L_x2}=(0.0531\pm0.0002)\textrm{H}$$
+
+\subsubsection{互感值$M$及其不确定度$\sigma_M$}
+$$M=\frac1 4 (L_x1-L_x2)=0.0497\textrm{H}$$
+$$\sigma_M=\frac1 4 \sqrt{\sigma_{L_x1}^2+\sigma_{L_x2}^2}=\frac1 4 \times 0.002=0.0005\textrm{H}$$
+$$M\pm\sigma_M=(0.0497\pm0.0005)\textrm{H}$$
+
+\subsection{麦克斯韦—维恩桥测量磁环}
+电源电压$E=1.007\textrm V$，$\bar{D}=8.40\textrm{cm}$，$S=1.91\textrm{cm}^2$，$N=490$。
+$$L=C_0 R_1 R_2$$
+$$R_L=\frac{R_1 R_2}{R_0}$$
+$$\mu=\frac{\pi \bar{D}}{\mu_0 N^2 S}L=2.3975\textrm{mH}^{-1}\cdot L$$
+\begin{table}[H]
+\centering
+\caption{不同频率下测量磁环的电感$L$与损耗$R_L$}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$f/\textrm{kHz}$&$R_1/\Omega$&$R_2/\Omega$&$C_0/\mu\textrm F$&$R_0/\Omega$&$L/\textrm {mH}$&$R_L/\Omega$&$\mu$\\\hline
+0.100&240.0&240.0&0.1255&8849.5&7.23&6.509&17.33\\\hline
+0.400&200.0&200.0&0.0824&3584.5&3.30&11.159&7.90\\\hline
+0.700&200.0&200.0&0.0594&2837.5&2.38&14.097&5.70\\\hline
+1.00&200.0&200.0&0.0479&2460.5&1.92&16.257&4.60\\\hline
+2.00&200.0&200.0&0.0322&1880.5&1.288&21.27&3.09\\\hline
+3.00&200.0&200.0&0.0254&1600.5&1.016&24.99&2.44\\\hline
+4.99&150.0&150.0&0.0352&734.5&0.792&30.63&1.90\\\hline
+7.00&150.0&150.0&0.0294&645.5&0.662&34.86&1.59\\\hline
+9.00&150.0&150.0&0.0262&585.5&0.590&38.43&1.41\\\hline
+10.00&150.0&150.0&0.0248&562.5&0.558&40.00&1.34\\\hline
+\end{tabular}
+\end{table}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{lab-27-figure-2.png}
+\caption{磁环$L-f$曲线}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{lab-27-figure-3.png}
+\caption{磁环$\mu-f$曲线}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{lab-27-figure-4.png}
+\caption{磁环$R_L-f$曲线}
+\end{figure}
+
+可见$L$和$\mu$随频率升高而下降，$R_L$随频率升高而上升。
+
+当频率升高以后，磁畴极性的变化跟不上电流的变化，这样它的磁性就弱了，磁导率下降，因而电感量下降。
+
+此外，频率升高时，铁芯的损耗（磁滞损耗和涡流损耗）增大，以及线圈的趋肤效应加大，导致电感器的损耗增大。
+\section{思考题（2）}
+见1.4“比较麦克斯韦—维恩桥和麦克斯韦桥的收敛性”。
+
+\end{CJK}
+\end{document}

@@ -1,0 +1,95 @@
+\documentclass[12pt]{report}
+\usepackage{CJK,latexsym,bm}
+\setlength{\parskip}{0.5ex}
+\setlength{\textwidth}{140mm}
+\setlength{\textheight}{250mm}
+\setlength{\voffset}{-18.4mm}
+\setlength{\hoffset}{-8.4mm}
+\begin{document}
+\begin{CJK}{GBK}{song}
+\begin{center}
+\Large{\CJKfamily{hei}实验九 刚体转动实验  实验报告}\\
+\normalsize
+1400012141\\
+邵智轩\\
+周二下午3组\\
+2016年11月1日
+\end{center}
+
+
+\noindent {\large \CJKfamily{hei}一 数据及处理}
+
+\noindent \textbf{1　利用$m$与$\frac{1}{t^2}$的关系测量转动惯量}
+
+保持$r$,$h$,$M_\mu$不变，改变$m$。\\$r=2.50cm$\\测得$h=85.5cm$\\
+\begin{center}\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+序号&$\theta_1'$&$\theta_1''$&$\theta_2'$&$\theta_2''$&$\psi$\\
+\hline
+1& $268\degree51'$& $88^{\circ}58'$& $148^{\circ}54'$& $328^{\circ}55'$& $120^{\circ}0'$\\\hline
+2& $268^{\circ}54'$& $89^{\circ}0'$& $148^{\circ}58'$& $328^{\circ}57'$& $119^{\circ}59'30''$\\\hline
+3& $268^{\circ}54'$& $89^{\circ}0'$& $148^{\circ}58'$& $328^{\circ}57'$& $119^{\circ}59'30''$\\\hline
+平均值$\bar\psi$& -& -&-&-& $119^{\circ}59'40''$\\\hline
+\end{tabular}
+\end{center}
+$\sigma_{\bar\psi}=10''$\\
+$\sigma_A=\sigma_{\psi}=\sqrt{\sigma_{\bar\psi}^2+(\frac{e}{\sqrt3})^2}=0.6'=40''$\\
+$A=180\degree-\bar\psi=60\degree0'20''\pm40''$\\
+
+\noindent \textbf{2　掠入射法测三棱镜的折射率（钠灯）}
+
+$\phi=\frac{1}{2}(\theta_3'-\theta_4'+\theta_3''-\theta_4'')$
+\begin{center}\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+序号&$\theta_3'$&$\theta_3''$&$\theta_4'$&$\theta_4''$&$\phi$\\
+\hline
+1& $296\degree15'$& $116\degree18'$& $254\degree40'$& $74\degree46'$& $41\degree33'30''$\\\hline
+2& $296\degree16'$& $116\degree18'$& $254\degree40'$& $74\degree46'$& $41\degree34'$\\\hline
+3& $296\degree16'$& $116\degree18'$& $254\degree40'$& $74\degree46'$& $41\degree34'$\\\hline
+平均值$\bar\phi$& -& -&-&-& $41\degree33'50''$\\\hline
+\end{tabular}
+\end{center}
+$\sigma_{\bar\phi}=10''$\\
+$\sigma_{\phi}=\sqrt{\sigma_{\bar\phi}^2+(\frac{e}{\sqrt3})^2}=0.6'=40''$\\
+$\bar\phi=41\degree33'50''\pm40''$\\
+$n=\sqrt{1+(\frac{\cos{A}+\sin{\phi}}{\sin{A}})^2}$\\
+代入数据，则计算出$n=1.67463$\\
+又$\sigma_n=\frac{\sqrt{n^2-1}}{n\sin{A}}\sqrt{(\cos{\phi}\sigma_{\phi})^2+(\frac{1+\sin{\phi}\cos{A}}{\sin{A}}\sigma_A)^2}=3\times10^{-4}$\\
+所以$n=1.6746\pm0.0003$\\
+
+\noindent \textbf{3　最小偏向角法测三棱镜的折射率（汞灯绿色谱线）}
+
+$\delta_m=\frac{1}{2}(\theta_5'-\theta_6'+\theta_5''-\theta_6'')$
+\begin{center}\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+序号&$\theta_5'$&$\theta_5''$&$\theta_6'$&$\theta_6''$&$\delta_m$\\
+\hline
+1& $311\degree10'$& $131\degree15'$& $257\degree7'$& $77\degree13'$& $54\degree2'30''$\\\hline
+2& $310\degree59'$& $131\degree4'$& $256\degree54'$& $77\degree0'$& $54\degree4'30''$\\\hline
+3& $311\degree39'$& $131\degree41'$& $257\degree29'$& $77\degree36'$& $54\degree7'30''$\\\hline
+平均值$\bar{\delta_m}$& -& -&-&-& $54\degree4'50''$\\\hline
+\end{tabular}
+\end{center}
+$\sigma_{\bar{\delta_m}}=2'$\\
+$\sigma_{\delta_m}=\sqrt{\sigma_{\bar{\delta_m}}^2+(\frac{e}{\sqrt3})^2}=2'$\\
+$\bar{\delta_m}=54\degree5'\pm2'$\\
+$n=\frac{\sin{\frac{A+\delta_m}{2}}}{\sin{\frac{A}{2}}}$\\
+代入数据，则计算出$n=1.67804$\\
+又$\sigma_n=\frac{n}{2}\sqrt{(\cot{\frac{A+\delta_m}{2}}\sigma_{\delta_m})^2+[(\cot{\frac{A+\delta_m}{2}}-\cot{\frac{A}{2}})\sigma_A]^2}=4\times10^{-4}$\\
+所以$n=1.6780\pm0.0004$\\
+
+\noindent {\large \CJKfamily{hei}二 分析与讨论}
+
+\noindent \textbf{实验中测量误差的来源分析}
+
+1 游标盘的读数有对准误差，或者个人因素造成的系统误差。
+
+2 最小偏向角法中，谱线的折返位置没有找准。
+
+3 在测量过程中，望远镜筒、平行光筒、载物台平面偏离了与转轴垂直的状态。
+
+4 在转动望远镜筒找像时没有拧紧游标盘的止动螺钉，导致待测物（载物台）也有一定程度地旋转。\\
+
+
+\end{CJK}
+\end{document}

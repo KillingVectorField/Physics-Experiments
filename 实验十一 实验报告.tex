@@ -1,0 +1,219 @@
+\documentclass[11pt]{article}
+\usepackage{CJK,latexsym,bm,float,indentfirst}
+\usepackage{graphicx}
+\setlength{\parskip}{0.5ex}
+\setlength{\textwidth}{140mm}
+\setlength{\textheight}{220mm}
+\setlength{\voffset}{-18.4mm}
+\setlength{\hoffset}{-8.4mm}
+\def \degree{^{\circ}}
+\begin{document}
+\begin{CJK}{GBK}{song}
+\begin{center}
+\Large{\CJKfamily{hei}实验十六 霍尔效应测量磁场  实验报告}\\
+\normalsize
+1400012141\\
+邵智轩\\
+周二下午3组11号\\
+2016年11月29日
+\end{center}
+\section{实验数据处理}
+\subsection{测量霍尔电压$U_H$和霍尔电流$I_H$的关系}
+为了消除副效应的影响，在操作时我们要分别改变$I_H$的方向和$B$的方向（即$I_M$的方向），记下4组电势差数据：
+
+当$I_H$正向，$B$正向时：$U_1=U_H+U_0+U_E+U_N+U_R$
+
+当$I_H$负向，$B$正向时：$U_2=-U_H-U_0-U_E+U_N+U_R$
+
+当$I_H$负向，$B$负向时：$U_3=U_H-U_0+U_E-U_N-U_R$
+
+当$I_H$正向，$B$负向时：$U_4=-U_H+U_0-U_E-U_N-U_R$
+
+考虑到$U_E<<U_H$，可忽略，于是
+$$U_H=\frac{1}{4}(U_1-U_2+U_3-U_4)$$
+
+固定励磁电流$I_M=0.600\ \textrm A$，输入霍尔电流$I_H$接入1、2端，测量3、4端电压$U_1,\ \ U_2,\ \ U_3, \ \ U_4$。
+
+\begin{table}[H]
+\caption{$I_H$接1、2端时$U_H$—$I_H$数据}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$I_H/ \textrm{mA}$&$U_1/ \textrm{mV}$&$U_2/ \textrm{mV}$&$U_3/ \textrm{mV}$&$U_4/ \textrm{mV}$&$U_H/ \textrm{mV}$\\\hline
+2.00&5.66&-5.66&5.79&-5.79&5.73\\\hline
+4.00&11.34&-11.32&11.59&-11.57&11.46\\\hline
+6.00&17.04&-16.99&17.41&-17.36&17.20\\\hline
+8.00&22.72&-22.63&23.22&-23.13&22.93\\\hline
+10.00&28.44&-28.31&29.06&-28.90&28.68\\\hline
+\end{tabular}
+\end{table}
+计算得
+$$r=0.9999997$$
+$$k=2.8685\ \ \textrm{mV}/\textrm{mA}$$
+$$b=-0.01\textrm{mV}$$
+
+作图见\ \ Figure 1：
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{lab-16-figure-1.png}
+\caption{$I_H$接1、2端时$U_H$—$I_H$变化曲线}
+\end{figure}
+
+可以看出$U_H$与$I_H$满足严格的线性性。
+
+固定励磁电流$I_M=0.600\ \textrm A$，输入霍尔电流$I_H$接入3、4端，测量1、2端电压$U_1,\ \ U_2,\ \ U_3, \ \ U_4$。
+
+\begin{table}[H]
+\caption{$I_H$接3、4端时$U_H$—$I_H$数据}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$I_H/ \textrm{mA}$&$U_1/ \textrm{mV}$&$U_2/ \textrm{mV}$&$U_3/ \textrm{mV}$&$U_4/ \textrm{mV}$&$U_H/ \textrm{mV}$\\\hline
+2.00&5.80&-5.81&5.67&-5.69&5.74\\\hline
+4.00&11.59&-11.62&11.35&-11.36&11.48\\\hline
+6.00&17.38&-17.43&17.02&-17.07&17.23\\\hline
+8.00&23.16&-23.25&22.68&-22.75&22.96\\\hline
+10.00&28.97&-29.10&28.36&-28.47&28.73\\\hline
+\end{tabular}
+\end{table}
+计算得
+$$r=0.9999997$$
+$$k=2.8685\ \ \textrm{mV}/\textrm{mA}$$
+$$b=-0.01\textrm{mV}$$
+
+作图见\ \ Figure 1：
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{lab-16-figure-1.png}
+\caption{$I_H$接1、2端时$U_H$—$I_H$变化曲线}
+\end{figure}
+
+可见$U_H$与$I_H$满足严格的线性性。
+
+\section{实验数据的分析、处理与结论}
+\subsection{直线拟合法}
+复摆的周期公式可改写为：
+$$T^2 h=\frac{4\pi^2}{g}h^2+\frac{4\pi^2}{mg}I_G$$
+看出$T^2 h$与$h^2$呈线性关系。做$T^2 h$ — $h^2$直线，则斜率$k=\frac{4 \pi^2}{g}$，截距$b=\frac{4 \pi^2}{mg}$。
+$$g=\frac{4 \pi^2}{k}$$
+$$I_G=\frac{bm}{k}$$
+$$R_G=\sqrt{\frac{I_G}{m}}=\sqrt{\frac b k}$$
+下表记录了实验数据计算得到的$T^2 h$和$h^2$的数据（$h>0$的部分）：
+\begin{table}[H]
+\caption{复摆周期$T$与悬点位置$h$的关系}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+$h^2/{\textrm{cm}}^2$&$T^2h/({\textrm s}^2\cdot \textrm cm)$&$h^2/{\textrm{cm}}^2$&$T^2h/({\textrm s}^2\cdot \textrm cm)$\\\hline
+1.44&11.2&262&22.8\\\hline
+17.6&12.7&296&24.1\\\hline
+27.0&13.1&331&25.6\\\hline
+38.4&13.6&369&27.1\\\hline
+51.8&14.2&408&28.7\\\hline
+67.2&14.8&449&30.3\\\hline
+84.6&15.5&493&32.1\\\hline
+104&16.3&538&33.9\\\hline
+125&17.2&586&35.8\\\hline
+149&18.2&635&37.8\\\hline
+174&19.2&686&39.9\\\hline
+202&20.3&740&42.1\\\hline
+231&21.5&&\\\hline
+\end{tabular}
+\end{table}
+由散点图可知，$h$最小的3个点偏离直线较大，故舍去。
+
+拟合出的直线见 Figure 1：
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{lab-11-figure-1.png}
+\caption{$T^2h$—$h^2$变化曲线}
+\end{figure}
+
+计算得到：
+$$r=0.999988$$
+$$k=0.0405\ \textrm{s}^2/\textrm{cm}=4.05\ \textrm{s}^2/\textrm{m}$$
+$$b=12.1\ \textrm{s}^2\cdot \textrm{cm}$$
+代入得到：
+$$g=\frac{4 \pi^2}{k}=9.75\ \textrm{m}/\textrm{s}^2$$
+$$I_G=\frac{bm}{k}=1.22\times10^5\ \textrm{g}\cdot\textrm{cm}^2$$
+$$R_G=\sqrt{\frac b k}=17.3\ \textrm{cm}$$
+\subsection{近似共轭点法}
+由公式：
+$$T_1=2\pi\sqrt{\frac{I_G+m{h_1}^2}{mgh_1}}, \ \ T_2=2\pi\sqrt{\frac{I_G+m{h_2}^2}{mgh_2}}$$
+将两式中$I_G$消去，则有
+$$\frac{4\pi^2}{g}=\frac{h_1 {T_1}^2-h_2 {T_2}^2}{{h_1}^2-{h_2}^2}$$
+分项得
+$$\frac{4\pi^2}{g}=\frac{{T_1}^2+{T_2}^2}{2(h_1+h_2)}+\frac{{T_1}^2-{T_2}^2}{2(h_1-h_2)}=A+B$$
+其中前一项$A$是能被精确测定的，后一项$B$不能被精确测定，因为其中包含了对重心位置的测定。不过，当$T_1\approx T_2$时，后一项$B$的分子很小，同时又可使分母$|h_1-h_2|$比较大，这一不能被精确测定的项$B$的数值很小，$|\frac B A|\approx10^{-2}$—$10^{-4}$，从而对g的影响不大。只保留前一项$A$，由此可得
+$$g=\frac{8\pi^2(h_1+h_2)}{T_1 ^2+ T_2 ^2}$$
+
+此方法称为“近似共轭点法”，因为我们选取的两点并非周期完全相等，而是近似相等。
+
+代入实验数据，第一组：
+$$h_1=27.2\ \textrm{cm},\ \ T_1=1.24414\ \textrm s, \ \ h_2=11.3\ \textrm{cm},\ \ T_2=1.24054\ \textrm s$$
+$$A=\frac{{T_1}^2+{T_2}^2}{2(h_1+h_2)}=4.01\ \textrm{s}^2/\textrm{m}$$
+$$B=\frac{{T_1}^2-{T_2}^2}{2(h_1-h_2)}=0.0281\ \textrm{s}^2/\textrm{m}$$
+$|\frac B A|=7\times10^{-3}$，满足近似条件。
+$$g_1=\frac{8\pi^2(h_1+h_2)}{T_1 ^2+ T_2 ^2}=9.84\ \textrm{m}/\textrm{s}^2$$
+
+第二组：
+$$h_1=24.2\ \textrm{cm},\ \ T_1=1.21687\ \textrm s, \ \ h_2=12.3\ \textrm{cm},\ \ T_2=1.22057\ \textrm s$$
+$$A=\frac{{T_1}^2+{T_2}^2}{2(h_1+h_2)}=4.07\ \textrm{s}^2/\textrm{m}$$
+$$B=\frac{{T_1}^2-{T_2}^2}{2(h_1-h_2)}=0.0379\ \textrm{s}^2/\textrm{m}$$
+$|\frac B A|=9\times10^{-3}$，满足近似条件。
+$$g_2=\frac{8\pi^2(h_1+h_2)}{T_1 ^2+ T_2 ^2}=9.70\ \textrm{m}/\textrm{s}^2$$
+
+第三组：
+$$h_1=21.2\ \textrm{cm},\ \ T_1=1.19630\ \textrm s, \ \ h_2=14.3\ \textrm{cm},\ \ T_2=1.19603\ \textrm s$$
+$$A=\frac{{T_1}^2+{T_2}^2}{2(h_1+h_2)}=4.03\ \textrm{s}^2/\textrm{m}$$
+$$B=\frac{{T_1}^2-{T_2}^2}{2(h_1-h_2)}=0.0468\ \textrm{s}^2/\textrm{m}$$
+$|\frac B A|=1\times10^{-2}$，满足近似条件。
+$$g_3=\frac{8\pi^2(h_1+h_2)}{T_1 ^2+ T_2 ^2}=9.80\ \textrm{m}/\textrm{s}^2$$
+
+平均值：
+$$g=\frac{g_1+g_2+g_3}{3}=9.78\ \textrm{m}/\textrm{s}^2$$
+
+\subsection{共轭点法}
+利用Table 1 中数据，制成$T$—$h$图Figure 2：
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{lab-11-figure-2.png}
+\caption{$T$—$h$变化曲线}
+\end{figure}
+
+从图中读出周期$T$相等的两个共轭点（分别在曲线的两支上，且$h_1\neq h_2$），等效摆长$L=h_1+h_2$，代入周期公式，可得：
+$$g=\frac{4\pi^2 L}{T^2}=\frac{4\pi^2 (h_1+h_2)}{T^2}$$
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{lab-11-figure-4.png}
+\caption{共轭点法求$g$}
+\end{figure}
+从图中读出三组数据，分别计算：
+
+第一组：$T=1.210\ \textrm s,\ \ h_1=12.9\ \textrm{cm}, \ \ h_2=23.4\ \textrm{cm}$
+$$g_1=\frac{4\pi^2 (h_1+h_2)}{T^2}=9.79\ \textrm{m}/\textrm{s}^2$$
+
+第二组：$T=1.200\ \textrm s,\ \ h_1=13.7\ \textrm{cm}, \ \ h_2=22.0\ \textrm{cm}$
+$$g_2=\frac{4\pi^2 (h_1+h_2)}{T^2}=9.79\ \textrm{m}/\textrm{s}^2$$
+
+第三组：$T=1.190\ \textrm s,\ \ h_1=15.0\ \textrm{cm}, \ \ h_2=20.2\ \textrm{cm}$
+$$g_3=\frac{4\pi^2 (h_1+h_2)}{T^2}=9.81\ \textrm{m}/\textrm{s}^2$$
+
+得平均值：
+$$g=\frac{g_1+g_2+g_3}{3}=9.80\ \textrm{m}/\textrm{s}^2$$
+
+\section{分析与讨论}
+\subsection{三种处理方法的比较}
+查阅资料可知北京地区的重力加速度约为$g=9.8015\ \textrm{m}/\textrm{s}^2$。从计算结果来看，共轭点法和近似共轭点法比较准确，而直线拟合法结果偏差较大。
+
+直线拟合法的优点在于能用到所有数据，而且不仅能计算出重力加速度$g$，还能求得$I_G$和$R_G$。缺点在于计算数据比较麻烦；要考虑重心不在0处带来的影响；而且$h$较小的点偏离线性的程度较大。我试着计算了一下排除掉$h<10$的点后再进行拟合，则相关系数$r$增大（线性性更好），且求得的$g$增大，更接近实际值。
+
+近似共轭点法的优点：被保留的一项可以被精确测定，与重心位置无关。且计算公式比较方便。麻烦之处在于数据的选取，要使忽略的那一项尽可能小，对近似共轭点的选取有较高的要求。如果$B$项达到$A$项的1\%，那么$g$也会有1\%的偏差，这偏差是相当大的。
+
+共轭点法的优点在于十分准确（理论上没有忽略、近似的步骤），且计算公式很简洁。缺点在于需要作图，且作图和读图的过程中也会产生误差。
+
+\section{收获与感想}
+本实验操作上不是很难，重点在于调铅直（否则测得的为$g$的一个分量）。主要的收获在于数据处理与分析的过程，用了三种不同的方法，各有优劣。练习了直线拟合、小项忽略、作图反推等数据处理方法。
+
+\end{CJK}
+\end{document}

@@ -1,0 +1,128 @@
+\documentclass[11pt]{article}
+\usepackage{CJK,latexsym,bm,float,indentfirst}
+\usepackage{graphicx, longtable}
+\setlength{\parskip}{0.5ex}
+\setlength{\textwidth}{140mm}
+\setlength{\textheight}{220mm}
+\setlength{\voffset}{-18.4mm}
+\setlength{\hoffset}{-8.4mm}
+\def \degree{^{\circ}}
+\begin{document}
+\begin{CJK}{GBK}{song}
+\begin{center}
+\Large{\CJKfamily{hei}实验八 测定金属的杨氏模量  实验报告}\\
+\normalsize
+1400012141\\
+邵智轩\\
+周二下午3组11号\\
+2017年2月28日
+\end{center}
+\section{实验原理}
+$$E=\frac{FL}{S\delta L}=\frac{4mgL}{\pi d^2 \delta L}$$
+
+$E$为金属的杨氏模量，反映材料的弹性性质，单位为Pa。
+
+实验中带测量的4个物理量分别为$m$、$L$、$d$、$\delta L$。由不确定度合成公式得：
+$$\frac{\sigma_E}{E}=\sqrt{(\frac{\sigma_m}{m})^2+(\frac{\sigma_L}{L})^2+(2 \frac{\sigma_d}{d})^2+(\frac{\sigma_{\delta L}}{\delta L})^2}$$
+
+估算各项对总的不确定度的贡献：
+
+$$\frac{e_m}{m}=\frac{1\textrm{g}}{200\textrm{g}}=0.5\%$$
+$$\frac{e_L}{L}=\frac{0.5\textrm{cm}}{80\textrm{cm}}=0.6\%$$
+$$2 \frac{e_d}{d}=2\times \frac{0.004\textrm{mm}}{0.3\textrm{mm}}=3\%$$
+$$\frac{e_{\delta L}}{\delta L}=\frac{0.05\textrm{mm}}{1\textrm{mm}}=5\%$$
+
+由此可知，$d$和$\delta L$的测量是实验的关键，精度要求较高，而$m$和$L$的测量对误差的贡献很小。由于每个砝码质量与$200\textrm g$相差不大于$1\textrm g$，故无需逐个测量，直接都按$200\textrm g$计算也是合理的。金属丝$L$的测量也无需特别精确，$0.5\textrm {cm}$以内的偏差都是可以接受的。
+
+\section{数据处理}
+\subsection{$\delta L$的测量及其不确定度}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+$i$&$m_i/\textrm g$&$r_i/\textrm{mm}$&$r'_i/\textrm{mm}$\\\hline
+0&0&2.68&2.69\\\hline
+1&200&2.78&2.79\\\hline
+2&400&2.89&2.90\\\hline
+3&600&3.00&3.00\\\hline
+4&800&3.10&3.11\\\hline
+5&1000&3.21&3.22\\\hline
+6&1200&3.33&3.34\\\hline
+7&1400&3.45&3.45\\\hline
+8&1600&3.56&3.56\\\hline
+9&1800&3.68&3.68\\\hline
+\end{tabular}
+\caption{金属丝受外力拉伸后的伸展变化}
+\end{table}
+对$\{r_i\}$组线性拟合，得
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.6]{lab-8-figure-1.png}
+\caption{$\{r_i\}$组金属丝伸长量随砝码个数的变化}
+\end{figure}
+$$r=0.9997$$
+$$k=0.1113 \textrm{mm}$$
+由相关系数$r$可得，$\frac{\sigma_k}{k}=\sqrt{\frac{1/r^2-1}{n-2}}=0.9\%$，又在原理部分已经计算过$\frac{e_{\delta L}}{\delta L}=\frac{0.05\textrm{mm}}{1\textrm{mm}}=5\%$，
+$$\frac{\sigma_{\delta L}}{\delta L}=\sqrt{(\frac{\sigma_k}{k})^2+\frac{1}{3}(\frac{e_{\delta L}}{\delta L})^2}=\sqrt{0.009^2+\frac{1}{3}\times0.05^2}=3\%$$
+$$\sigma_{\delta L}=3\%\times \delta L=0.003\textrm{mm}$$
+$$\delta L\pm\sigma_{\delta L}=(0.111\pm0.003)\textrm{mm}$$
+%$$\sigma_k=k\cdot \sqrt{\frac{1/r^2-1}{n-2}}=0.001\textrm{mm}$$
+对$\{r'_i\}$组线性拟合，得
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.6]{lab-8-figure-2.png}
+\caption{$\{r'_i\}$组金属丝伸长量随砝码个数的变化}
+\end{figure}
+$$r=0.9998$$
+$$k=0.1102\textrm{mm}$$
+由相关系数$r$可得，$\frac{\sigma_k}{k}=\sqrt{\frac{1/r^2-1}{n-2}}=0.7\%$，又$\frac{e_{\delta L}}{\delta L}=\frac{0.05\textrm{mm}}{1\textrm{mm}}=5\%$，
+$$\frac{\sigma_{\delta L}}{\delta L}=\sqrt{(\frac{\sigma_k}{k})^2+\frac{1}{3}(\frac{e_{\delta L}}{\delta L})^2}=\sqrt{0.007^2+\frac{1}{3}\times0.05^2}=3\%$$
+$$\sigma_{\delta L}=3\%\times \delta L=0.003\textrm{mm}$$
+$$\delta L\pm\sigma_{\delta L}=(0.110\pm0.003)\textrm{mm}$$
+综合$\{r_i\}$组和$\{r'_i\}$组的测量结果，得
+$$\delta L\pm\sigma_{\delta L}=(0.110\pm0.003)\textrm{mm}$$
+
+\subsection{$d$的测量及其不确定度}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$i$&1&2&3&4&5&6&7&8&9&10\\\hline
+$d'/\textrm{mm}$&0.325&0.325&0.321&0.319&0.320&0.325&0.320&0.321&0.323&0.321\\\hline
+\end{tabular}
+\caption{测量金属丝直径}
+\end{table}
+螺旋测微器零点读数：$d_0=-0.008\textrm{mm}$。
+$$\bar{d}=0.322+0.008=0.330\textrm{mm}$$
+$$\sigma_{\bar{d}}=0.002\textrm{mm}$$
+$$\sigma_{d}=\sqrt{{\sigma_{\bar{d}}}^2+\frac{{e_d}^2}{3}}=0.003\textrm{mm}$$
+$$d\pm \sigma_{d}=0.330\pm0.003\textrm{mm}$$
+$$2 \frac{\sigma_d}{d}=2\times \frac{0.003\textrm{mm}}{0.33\textrm{mm}}=2\%$$
+
+\subsection{$ L$的测量及其不确定度}
+$L=79.5\pm0.5 \textrm{cm}$，$e_L=0.5\textrm{cm}$。
+$$\frac{e_L}{L}=\frac{0.5\textrm{cm}}{80\textrm{cm}}=0.6\%$$
+
+\subsection{杨氏模量$E$及其不确定度$\sigma_E$}
+$$E=\frac{4mgL}{\pi d^2 \delta L}=1.657\times10^{11} \textrm{Pa}$$
+$$\frac{\sigma_E}{E}\approx \sqrt{(2 \frac{\sigma_d}{d})^2+(\frac{\sigma_{\delta L}}{\delta L})^2}=\sqrt{(2\%)^2+(3\%)^2}=3.6\%$$
+$$E\pm\sigma_E=(1.66\pm0.06)\times 10^{11}\textrm{Pa}$$
+\section{分析与讨论}
+%\subsection{思考题}
+在用CCD法测定金属丝杨氏模量实验中，对出现的下列两种情况分别分析可能的原因：
+
+一是，开始加第一、二个砝码时$r$的变化量大于正常的变化量：
+
+金属丝有弯折，开始加前两个砝码时将金属丝抻直了。
+
+二是在上述情况下$r$的变化量小于正常的变化量：
+
+金属丝下端柱体可能与限位螺丝间有摩擦；金属丝还没有进入弹性范围内。
+%\subsection{反思}
+%实验测量结果比标准值大了5\%以上，令我很不解，反复测量各项都找不出原因。实验结束后与同学交流时突然发现了原因：我的千分尺的使用方法不对，导致$d$的测量引入了很大的误差！在夹住金属丝时，只需要拧至外围的
+
+\section{收获与感想}
+本次实验课上关于误差来源分析的讨论给我留下深刻的印象。通过粗略的估算，就知道误差主要来源于哪几个物理量的测量，即这些量的测量是实验的关键，而其他量如$L$、$m$贡献的误差很小，所以金属丝长度只需要用木尺测量，而砝码质量可以直接近似为$200\textrm g$，无需逐个测量，节省了很多时间。此之谓“抓主要矛盾”。
+
+\end{CJK}
+\end{document}

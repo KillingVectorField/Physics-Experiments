@@ -1,0 +1,188 @@
+\documentclass[11pt]{article}
+\usepackage{CJK,latexsym,bm,float,indentfirst,subfig,longtable}
+\usepackage{graphicx}
+\setlength{\parskip}{0.5ex}
+\setlength{\textwidth}{140mm}
+\setlength{\textheight}{220mm}
+\setlength{\voffset}{-18.4mm}
+\setlength{\hoffset}{-8.4mm}
+\def \degree{^{\circ}}
+ \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\begin{document}
+\begin{CJK}{GBK}{song}
+\begin{center}
+\Large{\CJKfamily{hei}实验十六 观察光的偏振现象  实验报告}\\
+\normalsize
+1400012141\\
+邵智轩\\
+周二下午3组11号\\
+2016年12月6日
+\end{center}
+\section{实验现象描述与解释}
+\subsection{用偏振光镜验证布儒斯特定律}
+\subsubsection{先使镜$\textrm A // \textrm P$，绕$z$轴转$\textrm A$，观察$\textrm A$的反射光和透射光的光强变化。}
+
+现象：在$\textrm A // \textrm P$时，光强最强，随着镜A开始转动，光强逐渐减弱。当转过约$90\degree$时，光强达到最弱，几乎消光。继续旋转，光强又增大，直到再转过约$90\degree$（相对初始位置旋转了$180\degree$），光强又达到极大。之后每转过一个$90\degree$，光强就发生一次极大到极小或极小到极大的变化。在$0$—$360\degree$内，光强强→弱→强→弱→强变化。
+
+透射光变化规律正好与反射光相反。在$\textrm A // \textrm P$时，光强最弱，随着镜A开始转动，光强逐渐增强。当转过约$90\degree$时，光强达到最强。继续旋转，光强又减弱，直到再转过约$90\degree$（相对初始位置旋转了$180\degree$），光强又达到极小。之后每转过一个$90\degree$，光强就发生一次极大到极小或极小到极大的变化。在$0$—$360\degree$内，光强弱→强→弱→强→弱变化。
+
+解释：激光由布儒斯特角入射玻璃片P后，反射光只有s光分量而没有p光分量。而P的反射光相对镜A也是以布儒斯特角入射，有$R_p=0$，镜A的反射光强完全由入射光s光分量的大小决定。当镜$\textrm A // \textrm P$时，入射光相对镜A为纯s光，故镜A的反射光强极大。镜A绕$z$轴转动过程中，s光分量不断减小，p光分量不断增加，故反射光光强减弱，直到转过$90\degree$，入射光相对镜A为纯P光，反射光光强减为0，出现消光。
+
+由能量守恒，透射光强与反射光强的和应为常数。所以二者当然会有相反的变化趋势。
+
+\subsubsection{另外，使镜P的反射光垂直入射一偏振片，旋转偏振片$360\degree$可见光强每隔$90\degree$发生强弱变化，并有两次消光现象，证明P的反射光为线偏振光。}
+
+\subsection{观察双折射现象}
+\subsubsection{以小灯照明铝板上的小孔，孔上放方解石块I（负单轴晶体），通过它观看小孔，转动方解石。}
+
+现象：可以看到有两个孔的像。转动晶体，其中一个像不动，另一个像绕其旋转。
+
+\begin{figure}[H]
+\centering
+\subfloat[两个像]
+{\label{figure:subfig_a}
+\includegraphics[scale=0.05]{lab-21-figure-1}}
+\subfloat[旋转]
+{\label{figure:subfig_b}
+\includegraphics[scale=0.05]{lab-21-figure-2}}
+\subfloat[转回原来位置]
+{\label{figure:subfig_b}
+\includegraphics[scale=0.05]{lab-21-figure-3}}
+\caption{观察方解石I的双折射}
+\end{figure}
+
+解释：小孔发出的光在方解石中分解为o光和e光，o光符合折射定律，所以不会转动。但是转动过程中改变了方解石光轴的方向，所以e光也随之转动。
+
+\subsubsection{将方解石块II放在小孔上（磨面压小孔），观察现象。}
+
+现象：在平行于磨面的面上观察到一个亮孔像。旋转方解石II，该像不动。
+
+原理：方解石II是将方解石的两个钝棱角（连线为光轴方向）切磨掉而成的晶体，其光轴垂直于表面。沿光轴入射的光线o光和e光不分离，故只看到一个像，且该像不随晶体旋转而旋转。
+
+\subsubsection{利用一透光方向已知的偏振片，判断o光与e光电矢量的振动方向。}
+
+现象：将偏振片罩在方解石块I上，旋转偏振片，发现o光和e光的像依次消失。其消失的角度相差约$90\degree$（o光消失于$0\degree$和$180\degree$，e光消失于$90\degree$和$270\degree$）。
+
+解释：证明了o光和e光为线偏振光，且其振动方向互相垂直。
+
+\subsection{观察线偏振光通过$\lambda/2$片后的现象}
+\subsubsection{了解偏振片P，A的作用。在观察者与光源S之间，放入偏振片P，旋转P，看透射光的强度有无变化。再放上检偏器A，转A，观察光透过A的强度怎样变化。}
+
+现象：转动P，光强没有变化。令P的透振方向竖直（$0\degree$指向正上方），再放上检偏器A，转A，透射光在$0\degree$和$180\degree$达到极大，在$90\degree$和$270\degree$消光。
+
+解释：偏振片只让其透振方向的光通过，故其透射光为线偏振光，偏振片P是一个起偏器。自然光各种取向的光矢量均匀地分布于横平面内，其光强按马吕斯定律以$\cos^2{\theta}$比率通过，平均看，光强透过率为$\frac 1 2$，且对任意取向的P皆成立。故旋转P时透射光强不变，始终为$\frac{1}{2} I_0$。
+
+由起偏器P产生的线偏振光通过检偏器A，其投射光强$I_P$按照马吕斯定律：$I_P(\alpha)=I_0\cos^2{\alpha}$。所以当检偏器A旋转时，$\alpha=0\degree$或$180\degree$时，透射光强最大；$\alpha=90\degree$或$270\degree$，透射光强为0，发生消光。
+
+\subsubsection{转A达到消光。在P、A间插入$\lambda/2$片，将$\lambda/2$片转动$360\degree$，能看到几次消光？}
+现象：能看到4次消光，分别在$0\degree$、$90\degree$、$180\degree$、$270\degree$。
+
+解释：自然光经起偏器P变为一束线偏振光后，通过半波片。在半波片旋转的过程中，会出现4次入射光线振动方向平行于e轴（或o轴）的情况（每隔$90\degree$出现一次），此时出射光的偏振态不改变，仍然会被偏振片A消光。
+
+\subsubsection{把$\lambda/2$片任意转动一个角度$\theta$，破坏消光现象，再将A转动$360\degree$，又能看到几次消光？}
+现象：有两次消光，相差约$180\degree$。
+
+解释：线偏振光经过$\lambda/2$片后出射光仍为线偏振光，只是振动方向转过$2\theta$角。
+
+\subsubsection{仍使P的透光方向竖直，P与A正交，插入$\lambda/2$片，转之使消光（此时$\lambda/2$片的e轴或o轴以及P的透光方向都沿着竖直方向）。以此时P和$\lambda/2$片位置对应角度$\theta=0\degree$，保持$\lambda/2$片不动，使P转过一个角度$\theta$破坏消光。再沿与转P相反的方向转A至消光位置，记录A所转过的角度$\theta'$。}
+\begin{table}[H]
+\caption{$\lambda/2$片转动影响偏振态的观察记录}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+$\theta$&$\theta'$&线偏振光经$\lambda/2$片后振动方向转过的角度\\\hline
+$0\degree$&&\\
+$15\degree$&$-14\degree$&$29\degree$\\
+$30\degree$&$-30\degree$&$60\degree$\\
+$45\degree$&$-44\degree$&$89\degree$\\
+$60\degree$&$-60\degree$&$120\degree$\\
+$75\degree$&$-75\degree$&$150\degree$\\
+$90\degree$&$-90\degree$&$180\degree$\\\hline
+\end{tabular}
+\end{table}
+ 解释：线偏振光入射$\lambda/2$片后出射仍为线偏振光。若$\vec{E_I}$与波晶片光轴成$\theta$角，则$\vec{E_O}$与光轴成$-\theta$角。即线偏振光经$\lambda/2$片电矢量振动方向转过了$2\theta$角。
+ 
+ \subsection{观察线偏振光通过$\lambda/4$片后的现象}
+ \subsubsection{使P的透光方向竖直，P与A正交。插入$\lambda/4$片，转之使消光。}
+ 解释：插入$\lambda/4$片后，线偏振光变为正椭圆偏振光，偏振片A不能使之消光，故会有光透过A。转动$\lambda/4$片使消光，此时入射线偏振光的振动方向平行于$\lambda/4$片的e轴或o轴，出射光的偏振态不变，故仍会被检偏器A消光。
+ 
+ \subsubsection{保持$\lambda/4$片不动，转动一个角度$\theta$，然后将A转$360\degree$，观察光强变化。}
+ \begin{longtable}[H]{|c|c|c|}
+\caption{$\lambda/4$片转动影响偏振态的观察记录} \\
+\hline
+$\theta$&A转$360\degree$观察到的现象&光的偏振状态\\\hline
+$0\degree$&\tabincell{c}{有极大极小变化，有两次消光\\（无→强→无→强→无）}&\tabincell{c}{线偏振光：\\ \includegraphics[scale=0.5]{lab-21-figure-4}}\\\hline
+$15\degree$&\tabincell{c}{有极大极小变化，无两次消光\\（弱→强→弱→强→弱）}&\tabincell{c}{椭圆偏振光：\\ \includegraphics[scale=0.5]{lab-21-figure-5}}\\\hline
+$30\degree$&\tabincell{c}{有极大极小变化，无两次消光\\且光强变化较上一组小\\（弱→强→弱→强→弱）}&\tabincell{c}{椭圆偏振光：\\ \includegraphics[scale=0.5]{lab-21-figure-6}}\\\hline
+$45\degree$&光强几乎不变&\tabincell{c}{圆偏振光：\\ \includegraphics[scale=0.5]{lab-21-figure-7}}\\\hline
+$60\degree$&\tabincell{c}{有极大极小变化，无两次消光\\（强→弱→强→弱→强）}&\tabincell{c}{椭圆偏振光：\\ \includegraphics[scale=0.5]{lab-21-figure-8}}\\\hline
+$75\degree$&\tabincell{c}{有极大极小变化，无两次消光\\且光强变化较上一组大\\（强→弱→强→弱→强）}&\tabincell{c}{椭圆偏振光：\\ \includegraphics[scale=0.5]{lab-21-figure-9}}\\\hline
+$90\degree$&\tabincell{c}{有极大极小变化，有两次消光\\（强→无→强→无→强）}&\tabincell{c}{线偏振光：\\ \includegraphics[scale=0.5]{lab-21-figure-4}}\\\hline
+\end{longtable}
+
+\subsection{检验椭圆偏振光与部分偏振光}
+
+当P的透振方向与$\lambda/4$片的e轴或o轴夹角不为$0\degree$或$45\degree$时，出射光为椭圆偏振光。由此我们可以产生椭圆偏振光。而由自然光入射一玻片堆，其透射光为部分偏振光。
+
+实验方案：在产生椭偏光或部分偏振光的装置后先放上一偏振片P，旋转之达到透射光强最弱（透振方向为椭圆偏振光的短轴）。再放上检偏器A，旋转达消光，此时两偏振片透振方向正交。接着在中间放入$\lambda/4$片，旋转达消光（此时$\lambda/4$片的e轴或o轴平行于P的透光方向，也即入射椭圆偏振光的短轴）。接着移走起偏器P，旋转检偏器A观察光强变化现象。若观察到两次消光，则入射光为椭圆偏振光；若只有光强大小变化而无消光情况，则为部分偏振光。
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{lab-21-figure-10.png}
+\caption{检验椭圆偏振光和部分偏振光}
+\end{figure}
+
+原理解释：椭圆偏振光与部分偏振光的共同特点，是其偏振度介于$0$与$1$之间，单纯用一片偏振片是无法区分开来的，还需要借助一个$\lambda/4$片。当入射的椭圆偏振光其长短轴方向与$\lambda/4$片坐标轴一致时，入射的是正椭圆偏振光，则它在通过这$\lambda/4$片以后，便成为一线偏振光。这可用后面的检偏器A来检验，即旋转消光现象。若入射光为一部分偏振光，则通过这$\lambda/4$片后，还是部分偏振光。虽然其偏振态也发生了变化，入射的部分偏振光是大量线偏振的集合，而从$\lambda/4$片出射的是大量椭圆偏振光的集合，但两者都不能使检偏器A消光。
+
+实验现象：当入射光为椭圆偏振光时，观察到较明显的消光现象；当入射光为部分偏振光时，无消光现象。
+
+
+\subsection{显色偏振现象}
+\subsubsection{使P、A正交，用白光光源代替钠光灯。在P、A之间放入上述样品。转动样品，使消光。再转动样品$45\degree$角。此时在A后观察到各不同层胶纸的透射光呈什么颜色？}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.08]{lab-21-figure-11.jpg}
+\caption{P$\perp$A时的显色偏振现象}
+\end{figure}
+现象：如图，从左到右依次为橙、黄、绿、青。
+
+\subsubsection{逐步旋转A，直到A//P，观察在此过程中颜色变化的规律。当A//P时和A$\perp$P时透射光颜色有何关系？}
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.06]{lab-21-figure-13.jpg}
+\caption{转过$45\degree$消光}
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.06]{lab-21-figure-12.jpg}
+\caption{P//A时的显色偏振现象}
+\end{minipage}
+\end{figure}
+现象：转动过程中条带颜色逐渐变暗，转过$45\degree$时变成白色。由于有背景白光，可以认为这时已经出现了消光。继续转动，颜色逐渐加深，转到A//P时，如图（照片拍得有些模糊），从左到右依次为浅蓝、蓝、红、浅红。为A$\perp$P时的互补色。
+
+解释：入射光白光是各种波长的单色光组成的。如果其中缺了某种颜色的光（例如红色），就会呈现出它的互补色来（绿色）。
+
+（具体推导见《新概念光学》）对于给定的波晶片，它具有一定的$n_o-n_e$和厚度$d$，如果某单色光的波长$\lambda_1$满足：
+$$\delta_1=\frac{2\pi}{\lambda_1}(n_o-n_e)d=2k\pi$$
+有P$\perp $A时，消光；有P//A时，极大。
+
+如果另外一单色光的波长$\lambda_2$满足：
+$$\delta_2=\frac{2\pi}{\lambda_2}(n_o-n_e)d=(2k+1)\pi$$
+有P$\perp $A时，极大；有P//A时，消光。
+
+如果入射光中同时包含波长为$\lambda_1$和$\lambda_2$的光，则P$\perp$A时显示出波长为$\lambda_2$的颜色；P//A时显示出波长为$\lambda_1$的颜色。白光中包含各种可能的波长，随着A的转动，将显示出各种色彩的变换来。
+
+这里的胶带纸就起到了波晶片的功能。由于透明胶纸的厚度$d$不同，导致满足条件的$\lambda$不同，不同胶纸的透射光便呈现出不同的颜色。
+
+\section{收获与感想}
+由于光学课的进度问题，很多内容，如双折射、波晶片等还没有学到，需要提前自学相关内容。
+
+第一次亲身体验了丰富多彩的偏振现象，加深了对光学课上理论知识的理解。理解了波晶片对入射光的偏振态的改变功能，并成功地用$\lambda/4$片来检验椭圆偏振光和部分偏振光。观察到了丰富多彩而且十分有趣的显色偏振现象，并思考研究其原理。这些都是我在实验前所不曾了解的知识。
+
+
+
+
+
+\end{CJK}
+\end{document}

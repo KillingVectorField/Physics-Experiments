@@ -1,0 +1,259 @@
+﻿\RequirePackage{fixltx2e} %This package in CTeX is not compatible with revtex4-1
+\documentclass[aps,pre,12pt,preprint,onecolumn,showpacs,showkeys]{revtex4-1}
+\usepackage{ctex}
+\usepackage{mathtools,mathrsfs}
+\usepackage{multirow}
+\usepackage{setspace,dcolumn}
+\usepackage{hyperref}
+\usepackage{graphicx,psfrag,epsfig}
+\usepackage[font=small,format=plain,labelfont=bf,textfont=it,justification=centering,singlelinecheck=false]{caption}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,bm,upgreek}
+\usepackage{geometry}
+\usepackage[mathscr]{eucal}
+\usepackage{caption}
+\usepackage{subcaption}
+\hypersetup{colorlinks=true}
+\geometry{top=2.54cm,bottom=2.54cm,left=3cm,right=3cm}
+\renewcommand\appendixname{附录}
+\renewcommand\abstractname{}%摘要
+\renewcommand\tablename{表}
+\renewcommand\figurename{图}
+\makeatletter
+\def\@pacs@name{\songti\zihao{-4}{\bf PACS码：}}
+\def\@keys@name{\songti\zihao{-4}{\bf 关键词：}}
+\def\Dated@name{日期：}
+\def\Received@name{\zihao{-5}{接收} }
+\def\Revised@name{\zihao{-5}{修订} }
+\def\Accepted@name{\zihao{-5}{采纳} }
+\def\Published@name{\zihao{-5}{发表} }
+\makeatother
+\linespread{1.3}
+\renewcommand{\labelenumi}{\alph{enumi}.}
+\leftmargini=20mm
+\def \d {\mathrm d}
+\def \degree {^\circ}
+\def \V {\bm{V}}
+\def \degC {^\circ \mathrm{C}}
+
+\begin{document}
+\title{\bf\heiti\zihao{3}脉冲核磁共振\vspace{15mm}}
+\author{\fangsong\zihao{4}邵智轩\vspace{2mm}}
+\affiliation{\songti\zihao{-4}学号：1400012141\vspace{2mm}}
+\date{\today}
+%\pacs{02.10.Yn, 33.15.Vb, 98.52.Cf, 78.47.dc}
+\keywords{核磁共振，弛豫时间，自由衰减感应（FID）}
+\email{shaozhixuansh@pku.edu.cn; (86)13381350619}
+
+\begin{abstract}
+\vspace{10mm}
+\begin{spacing}{1.5}
+\songti\zihao{-4}
+    本实验学习了核磁共振及弛豫时间的原理。学习用软件观察、采集FID信号及信号采集有关的知识。测量CuSO$_4$样品的FID信号，并分析其频谱。用$\frac{\pi}{2}-\tau-\pi$自旋回波法测量横向弛豫时间$T_2$，用$\pi-\tau-\frac{\pi}{2}$系列脉冲法测量纵向弛豫时间$T_1$。
+
+\end{spacing}
+\end{abstract}
+\maketitle
+\songti\zihao{-4}
+
+\section{引言}
+    核磁共振（NMR）现象是指核磁矩在静磁场中被磁化后与特定频率的射频场产生共振吸收的现象。吸收能量后的自旋核与周围物质相互作用并以相同频率的射频辐射形式退激，共振频率和退激的时间特性（弛豫时间）与物质的种类、结构和环境有关，从而可以测定物质的结构。
+
+    不同于“核磁共振”实验中的稳态核磁共振（外加稳定的射频磁场），另一种方法是用脉冲射频场作用到核系统上，观察核系统对脉冲的响应，并利用快速傅里叶变换（FFT）将时域信号变换成频域信号。这种方法称为脉冲核磁共振。
+
+\section{原理}
+    核磁共振的原理已在“核磁共振”实验中叙述，此处略。
+    \subsection{弛豫时间}
+        我们观测到的是有大量原子核磁矩组成的宏观磁矩。在外磁场$\bm B _0$中（其方向记为$z$方向），每个核磁矩均绕着$\bm B _0$方向旋进，它们彼此间相位随机。所以在平衡态时，宏观磁矩$\bm M_0$在$x,y$方向的分量为0，$\bm M_0$与$\bm B_0$的方向一致。若因某种因素使$\bm M$偏离$z$轴，使$\bm M$获得非零的$\bm M_{xy}$，总磁矩将绕$z$轴以Larmor频率$\omega_0$旋转，并逐渐恢复到平衡态，这个过程称为弛豫过程。
+
+        从微观角度看弛豫过程的机理可分为两类，自旋-晶格弛豫（纵向弛豫），时间为$T_1$；自旋-自旋弛豫（横向弛豫），时间为$T_2$。有$T_2<T_1$。
+
+        纵向弛豫过程的方程为：
+        \begin{equation}
+            \frac{\d M_z}{\d t}=-\frac{M_z-M_0}{T_1}
+        \end{equation}
+        其解为
+        \begin{equation}
+            M_z=M_0+(M_z^0-M_0)\exp(-t/T_1)
+        \end{equation}
+        其中$M_z^0$为$t=0$时$M_z$的值。若$M_z^0=-M_0$（相当于$\pi$脉冲的作用），则
+        \begin{equation}
+            M_z=M_0(1-2\exp(-t/T_1)\label{eq:T1}
+        \end{equation}
+        横向弛豫过程的方程为：
+        \begin{equation}
+            \frac{\d M_x}{\d t}=-\frac{M_x}{T_2},\quad \frac{\d M_y}{\d t}=-\frac{M_y}{T_2}
+        \end{equation}
+        其解为
+        \begin{equation}
+            M_{xy}=M_{xy}^0\exp(-t/T_2)\label{eq:T2}
+        \end{equation}
+
+    \subsection{弛豫时间的测量}
+        \subsubsection{自由感应衰减（FID）信号及其频谱}
+            为测量$T_1$、$T_2$，在外磁场$\bm B_0$垂直的平面内加一脉冲旋转磁场$B_1$，其$\omega_1=\omega_0=\gamma B_0,\, B_1\ll\B_0$，从与$B_1$转速相同的坐标系$x',y',z'$中看，$M$在$B_1$的作用下以角速度$\gamma B_1$向$y'$方向旋转。如此脉冲的作用时间为$\tau$，则$\bm M$的倾角$\theta$为
+            \begin{equation}
+                \theta=\gamma B_1 \tau
+            \end{equation}
+            当$B_1$一定时，改变脉冲宽度$\tau$可使$\theta=\pi/2$，即$M$从$z'$方向倒向$y'$方向，如果在$y$方向放一电感线圈就可以检测到横向弛豫引起的指数衰减信号
+            \begin{equation}
+                S(t)=A\exp(-t/T_2)\label{eq:exp_decay}
+            \end{equation}
+            \begin{figure}[ht]
+                \centering
+                \includegraphics[width=75mm]{01}
+                \caption{\label{fig:FID}%
+                自由感应衰减（FID）信号及其频谱}
+            \end{figure}
+            此信号称为自由感应衰减（FID）信号。图(\ref{fig:FID}a)显示的是使磁矩转$\frac{\pi}{2}$的射频脉冲，其频率为$\nu$，脉宽为$\tau$。当$\nu$与核的共振频率$\nu_0=\frac{\gamma}{2\pi}B_0$相同时，FID信号严格按式(\ref{eq:exp_decay})变化，如图(\ref{fig:FID}b)所示。其傅里叶变换后的频谱$\left(\frac{1}{t}\right)$如图(\ref{fig:FID}c)所示，它的峰位在$\Delta \nu=0$处，此时射频频率$\nu=\nu_0$，峰的高度与信号强度有关。
+
+            当射频频率$\nu$与共振频率$\nu_0$有一定差异$\Delta \nu$时，FID信号如图(\ref{fig:FID}d)所示，其衰减规律为
+            \begin{equation}
+                S(t)=A\cos(2\pi \Delta \nu t)\exp(-t/T_2)
+            \end{equation}
+            其频谱如图(\ref{fig:FID}e)所示，与图(\ref{fig:FID}c)相比两者的差异仅在于峰位移动了$\Delta \nu$。因而可根据频谱图来改变射频脉冲的频率，使其达到严格的共振$\nu=\nu_0$；同时也可以改变射频脉冲的宽度$\tau$来准确判断是否达到了$\frac{\pi}{2}$的要求。
+        \subsubsection{用自旋回波信号测$T_2$}
+            
+            \begin{figure}[ht]
+                \begin{minipage}{.6\textwidth}
+                    \centering
+                    \includegraphics[width=85mm]{02}
+                    \caption{\label{fig:huibo}%
+                    自旋回波原理图}
+                \end{minipage}%
+                \begin{minipage}{0.4\textwidth}
+                    \centering
+                    \includegraphics[width=70mm]{03}
+                    \caption{\label{fig:huibo2}%
+                    自旋回波信号示意图}
+                \end{minipage}
+                
+            \end{figure}
+            用FID的包络线测出的$T_2^*$往往要小于$T_2$，这是由外加磁场$\bm B_0$的不均匀性引起的。为消除其影响，在实验中采用自旋回波法。先加一个$\pi/2$的射频脉冲长，使$M$从$z'$方向倒向$y'$方向，如图(\ref{fig:huibo}a)所示。由于横向弛豫的作用，经过一段时间$\tau$后，各核磁矩的相位离散使$M_{xy}'$减小，如图(\ref{fig:huibo}b)所示（磁场不均与使相位离散加速），为便于说明，图上仅画两个核磁矩，一个旋进角速度高于$\omega_0$（右旋），另一个低于$\omega_0$（左旋），此时再加一个$\pi$射频脉冲，由于此磁场对$x'$分量$M_x$不起作用，仅使$y'$方向分量$M_y$反转$\pi$，其旋转方向不变，如图(\ref{fig:huibo}c)所示。再经过时间$\tau$，$\bm{M}$在$-y'$方向会聚形成极大，如同形成一个回波，其过程如图(\ref{fig:huibo}d、e)所示。实际的自旋回波信号如图(\ref{fig:huibo2})所示，脉冲间隔的时间$\tau$要大于3-5个$T_2'$，使磁场不均匀的影响在测量中可忽略不计，自旋回波的峰值仅由$T_2$决定。改变$\tau$，测出一系列$\tau$核回波信号的峰值，用式(\ref{eq:T2})可求出自旋-自旋弛豫时间$T_2$，也可用多回波系列脉冲$\frac{\pi}{2}-\tau-\pi-2\tau-\pi-2\tau-\pi$…来测$T_2$。
+
+        \subsubsection{$T_1$的测量}
+            $T_1$的测量采用$\pi-\tau-\frac{\pi}{2}$反转脉冲法。首先加一个$\pi$脉冲使$M_0$从$z$方向反转到$-z$方向，这时由于自旋-晶格弛豫，$M_z$将从$-M_0$逐渐增加，最后趋于$M_0$。如在$\tau$时刻加一个$\frac{\pi}{2}$脉冲，使$M_z$转到$-y'$方向，则可在接收线圈中测到FID信号，其幅度正比于此刻的$M_z(\tau)$。改变$\tau$，测出一系列$M_z(\tau)$，即可由式(\ref{eq:T1})得出$T_1$。也可找$M_z(\tau_0)=0$时对应的$\tau_0$，用$\tau_0=T_1\ln 2$来估测$T_1$。
+
+
+
+    \subsection{实验结果}
+        \subsubsection{调出共振频率$\nu$}
+        试验样品为0.5\%和1\%浓度CuSO$_4$溶液。
+
+        当射频频率$\nu$与共振频率$\nu_0$有一定差异$\Delta \nu$时，频谱会偏倚零点，可调整射频频谱使其位于零点。此时的射频频率为：$17\mathrm{MHz}+113\mathrm{kHz}$。\footnote{随着环境、温度的变化，共振频率会有一定的漂移，需要不时调整。}
+        \subsubsection{确定$\frac{\pi}{2}$与$\pi$脉冲对应的脉冲宽度}
+            从0逐渐增大脉冲宽度，测得使FID信号峰值最大时（$\theta=\pi/2$）对应的脉冲宽度为$28\mu \mathrm{s}$；继续增大脉冲宽度，使信号峰值最小时（$\theta=\pi$）对应的脉冲宽度为$56\mu \mathrm{s}$。
+        \subsubsection{单回波$\frac{\pi}{2}-\tau-\pi$法测量横向弛豫时间$T_2$}
+        \begin{table}[h]
+            \caption{\label{tab:danhuibo_T2}%
+            单回波$\frac{\pi}{2}-\tau-\pi$法测$T_2$：不同延迟时间$\tau$对应的峰值强度}
+            \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+                \hline
+                $\tau/\mathrm{ms}$&1.00&1.50&2.25&3.40&5.00&7.60&11.40&17.00&26.00&38.00&50.00\\\hline
+                强度&560&545&520&488&423&368&284&215&119&53.5&23.0\\\hline
+            \end{tabular}
+        \end{table}
+
+        用表\ref{tab:danhuibo_T2}中的数据拟合曲线：$y=A+B\exp(-t/T_2)$，其中$A,B,T_2$为未知参数，$t=2\tau$。拟合结果为：
+        \begin{equation}
+            T_2=(31.8\pm1.6)\mathrm{ms},\quad A=0\pm 8, \quad B=596\pm7
+        \end{equation}
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=100mm]{danhuiboT2}
+            \caption{\label{fig:danhuibo_T2}%
+            单次回波法测$T_2$}
+        \end{figure}
+        拟合的曲线如图(\ref{fig:danhuibo_T2})所示。
+
+        \subsubsection{多回波系列脉冲$\frac{\pi}{2}-\tau-\pi-2\tau-\pi-2\tau-\pi$…测$T_2$}
+
+        \begin{figure}[ht]
+            \begin{minipage}{.6\textwidth}
+                \centering
+                \includegraphics[width=85mm]{sequential_huibo_T2_1}
+                \caption{\label{fig:sequential_huibo_T2_1}%
+                0.5\%溶液多回波系列脉冲测$T_2$}
+            \end{minipage}%
+            \begin{minipage}{0.4\textwidth}
+                \centering
+                \includegraphics[width=85mm]{sequential_huibo_T2_2}
+                \caption{\label{fig:sequential_huibo_T2_2}%
+                1\%溶液多回波系列脉冲测$T_2$}
+            \end{minipage}
+        \end{figure}
+
+        0.5\%溶液的拟合曲线如图\ref{fig:sequential_huibo_T2_1}所示，拟合结果为：
+        \begin{equation}
+            T_2=(33.5\pm0.5)\mathrm{ms},\quad A=5\pm 3, \quad B=634\pm3
+        \end{equation}
+        这与单回波法的结果接近，而多回波法精度更高，更准确。
+
+        1\%溶液的拟合曲线如图\ref{fig:sequential_huibo_T2_2}所示，拟合结果为：
+        \begin{equation}
+            T_2=(16.5\pm 0.4)\mathrm{ms},\quad A=10\pm 4, \quad B=674\pm6
+        \end{equation}
+        我们看到，随着CuSO$_4$溶液浓度加大，其横向弛豫时间显著缩短，这不难理解——更强的自旋自旋相互作用使得$\bm M$更快地回复到平衡态。
+
+        \subsubsection{反转脉冲$\pi-\tau-\frac{\pi}{2}$测$T_1$}
+        对于0.5\%溶液，FID信号峰值强度的拐点大约对应延迟时间$\tau_0\approx15.7\mathrm{ms}$，估算$T_1=\tau_0/\ln2=23\mathrm{ms}$。
+
+        \begin{table}[h]
+            \caption{\label{tab:fanzhuan_T1_1}%
+            反转脉冲$\pi-\tau-\frac{\pi}{2}$测$T_1$（0.5\%溶液）：不同延迟时间$\tau$对应的峰值强度}
+            \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+                \hline
+                $\tau(\mathrm{ms})$&16.5&22.0&28.0&36.0&47.0&60.0&80.0&100.0&120.0&145.0&180.0\\\hline
+                强度&3578&3603&3651&3704&3761&3812&3860&3886&3900&3910&3911\\\hline
+            \end{tabular}
+        \end{table}
+
+        对于1\%溶液，FID信号峰值强度的拐点大约对应延迟时间$\tau_0\approx9.7\mathrm{ms}$，估算$T_1=\tau_0/\ln2=14\mathrm{ms}$。
+
+        \begin{table}[h]
+            \caption{\label{tab:fanzhuan_T1_2}%
+            反转脉冲$\pi-\tau-\frac{\pi}{2}$测$T_1$（1\%溶液）：不同延迟时间$\tau$对应的峰值强度}
+            \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+                \hline
+                $\tau(\mathrm{ms})$&10.0&12.5&15.6&19.5&24.5&30.5&36.5&44.0&52.7&63.0\\\hline
+                强度&3578&3620&3667&3701&3762&3788&3806&3841&3872&3875\\\hline
+            \end{tabular}
+        \end{table}
+
+        \begin{figure}[ht]
+            \begin{minipage}{.6\textwidth}
+                \centering
+                \includegraphics[width=85mm]{sequential_huibo_T1_1}
+                \caption{\label{fig:sequential_huibo_T1_1}%
+                0.5\%溶液反转脉冲$\pi-\tau-\frac{\pi}{2}$测$T_1$}
+            \end{minipage}%
+            \begin{minipage}{0.4\textwidth}
+                \centering
+                \includegraphics[width=85mm]{sequential_huibo_T1_2}
+                \caption{\label{fig:sequential_huibo_T1_2}%
+                1\%溶液反转脉冲$\pi-\tau-\frac{\pi}{2}$测$T_1$}
+            \end{minipage}
+        \end{figure}
+
+        0.5\%溶液的拟合曲线如图\ref{fig:sequential_huibo_T1_1}所示，拟合结果为：
+        \begin{equation}
+            T_1=(38.3\pm2.1)\mathrm{ms},\quad A=3923\pm6, \quad B=-550\pm15
+        \end{equation}
+
+        1\%溶液的拟合曲线如图\ref{fig:sequential_huibo_T1_2}所示，拟合结果为：
+        \begin{equation}
+            T_1=(18.7\pm 1.6)\mathrm{ms},\quad A=3894\pm 10, \quad B=-536 \pm 21
+        \end{equation}
+        仍有纵向弛豫时间随浓度增大而减小。
+
+        以上我们验证了$T_2<T_1$。另外我们看到，由于拐点很难找准，用拐点单点估算出的$T_1$是很不准确的。
+
+    \section{结论}
+        通过本实验我们学习了如何测量脉冲核磁共振的弛豫时间，包括自旋-自旋弛豫时间$T_2$和自旋-晶格弛豫时间$T_1$，更深刻地体会到通过核磁共振可以让我们探索物质的内部结构、成分。
+    
+    \section{致谢}
+        感谢黄斐增老师对实验的悉心指导，使我迅速掌握了核磁共振原理，测量方法和仪器的操作。
+        
+    \begin{thebibliography}{}
+    \bibitem{Book} 吴思诚, 荀坤. 近代物理实验（第四版）. 北京：高等教育出版社, 2015
+    \end{thebibliography}
+\end{document}
